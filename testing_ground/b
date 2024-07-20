@@ -1,0 +1,150 @@
+simple_string = 'SGVsbG8sIFB5dGh'
+(True, set())
+(True, {'simple_string'})
+
+
+coded_bytes = binascii.b2a_hqx(simple_string.encode())
+(True, {'binascii', 'simple_string'})
+(True, {'coded_bytes', 'simple_string', 'binascii'})
+
+
+print(coded_bytes)
+(True, {'print', 'coded_bytes'})
+(True, {'print', 'coded_bytes'})
+
+
+decoded_bytes = binascii.a2b_hqx(coded_bytes)
+(True, {'binascii', 'coded_bytes'})
+(True, {'binascii', 'coded_bytes', 'decoded_bytes'})
+
+
+print(decoded_bytes)
+(True, {'print', 'decoded_bytes'})
+(True, {'print', 'decoded_bytes'})
+
+
+decoded_string = decoded_bytes[0].decode()
+(True, {'decoded_bytes'})
+(True, {'decoded_string', 'decoded_bytes'})
+
+
+print('Decoded String:', decoded_string)
+(True, {'decoded_string', 'print'})
+(True, {'decoded_string', 'print'})
+
+
+a = 10
+(True, set())
+(True, {'a'})
+
+
+b = 20
+(True, set())
+(True, {'b'})
+
+
+c = a + b
+(True, {'a', 'b'})
+(True, {'a', 'b', 'c'})
+
+
+print('Result of the calculation:', c)
+(True, {'print', 'c'})
+(True, {'print', 'c'})
+
+
+numbers = [1, 2, 3, 4, 5]
+(True, set())
+(True, {'numbers'})
+
+
+sum_of_numbers = sum(numbers)
+(True, {'sum', 'numbers'})
+(True, {'sum', 'numbers', 'sum_of_numbers'})
+
+
+print('Sum of the numbers:', sum_of_numbers)
+(True, {'print', 'sum_of_numbers'})
+(True, {'print', 'sum_of_numbers'})
+
+
+fibonacci = [0, 1]
+(True, set())
+(True, {'fibonacci'})
+
+
+limit = 10
+(True, set())
+(True, {'limit'})
+
+
+next_number = fibonacci[-1] + fibonacci[-2]
+(True, {'fibonacci'})
+(True, {'fibonacci', 'next_number'})
+
+
+fibonacci.append(next_number)
+(True, {'fibonacci', 'next_number'})
+(True, {'fibonacci', 'next_number'})
+
+
+print('Fibonacci sequence:', fibonacci)
+(True, {'fibonacci', 'print'})
+(True, {'fibonacci', 'print'})
+
+
+person = {'name': 'John', 'age': 30, 'city': 'New York'}
+(True, set())
+(True, {'person'})
+
+
+print('Person details:', person)
+(True, {'print', 'person'})
+(True, {'print', 'person'})
+
+
+text = 'Hello, World!'
+(True, set())
+(True, {'text'})
+
+
+print("The string starts with 'Hello'")
+(True, {'print'})
+(True, {'print'})
+
+
+print("The string does not start with 'Hello'")
+(True, {'print'})
+(True, {'print'})
+
+
+count = text.count('o')
+(True, {'text'})
+(True, {'count', 'text'})
+
+
+print("Count of 'o':", count)
+(True, {'print', 'count'})
+(True, {'print', 'count'})
+
+
+formatted_string = f'The sum of {a} and {b} is {c}'
+(True, {'a', 'b', 'c'})
+(True, {'formatted_string', 'a', 'b', 'c'})
+
+
+print('Formatted string:', formatted_string)
+(True, {'formatted_string', 'print'})
+(True, {'formatted_string', 'print'})
+
+
+T = 'Hiya'
+(True, set())
+(True, {'T'})
+
+
+val = [1, 2, 3]
+(True, set())
+(True, {'val'})
+
+
