@@ -1,0 +1,17 @@
+# installation :
+ python -m pip install  pip setuptools wheel \
+     --upgrade debugpy docker\
+       pycparser readme_renderer\
+       spyder spyder-terminal numpy scipy pandas matplotlib sympy cython\
+       dill pickleshare\
+       -i https://mirrors.aliyun.com/pypi/simple/
+
+# tnx
+
+# Can you create a Python file that doesn't have inputs and only has outputs?
+# Additionally, can it be longer than 50 lines?
+# Also, can it have imports and use those imports?
+# Also, can it use PyUnicode_EncodeUTF8 function?
+
+
+# This is an example Python file with outputs, imports, and the PyUnicode_EncodeUTF8 function

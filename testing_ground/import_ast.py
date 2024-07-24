@@ -1,16 +1,13 @@
 from typing import List, Tuple, Set, Union
 import ast
-import astunparse
-file_name = "/home/amirreza/Documents/Sharif/last/trace_test/poe_ai_generated/first.py"
-# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/libdocpkg/consoleviewer.py"
-# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/import_shelve.py"
-# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/pythonpathsetter.py"
-source = open(file_name).read()
-a = ast.parse(source=source, filename=file_name, type_comments=True)
-f1 = open("original.txt", "w")
-f1.write(ast.unparse(a))
-f1.close()
-a.body.insert(0,ast.Import([ast.alias("workspace_saver")])) 
+
+test_case_common_body = []
+def test_case_creator(ids, ast_type: ast.stmt):
+    test_case_body =  test_case_common_body
+    
+    test_case_body.append(ast_type)
+    
+    ast.Module()
 
 def merge_expr_info(
     info1: Union[Tuple[bool, Set[str]], None],
@@ -74,16 +71,16 @@ def get_info_expr(ast_type):
 def create_save_workspace_call(
     names: Set[str], ast_type: ast.stmt, is_start: bool
 ) -> ast.stmt:
-    extention_name: str = str(is_start) + "_" + str(ast_type.lineno)
     dict_keys = []
     dict_values = []
     for name in names:
         dict_keys.append(ast.Constant(name))
         dict_values.append(ast.Name(id=name, ctx=ast.Load()))
     return ast.Expr(value=ast.Call(func=ast.Name(id="save_workspace"),
-                    args=[ast.Constant(extention_name), ast.Dict(keys=dict_keys, values=dict_values)],
+                    args=[ast.Constant(ast_type.lineno),
+                          ast.Constant(is_start),
+                          ast.Dict(keys=dict_keys, values=dict_values)],
                     keywords=[],
-                    # lineno=ast_type.lineno + (1 if is_start else -1)
                     ))
     return None
 
@@ -108,9 +105,9 @@ def manipulate_assign_or_expr(ast_type: ast.stmt):
         return [ast_type]
     # return [ast_type]
 
-    return [create_save_workspace_call(expr_info[1], ast_type, is_start=False),
+    return [create_save_workspace_call(expr_info[1], ast_type, is_start=True),
             ast_type,
-            create_save_workspace_call(tar_info[1], ast_type, is_start=True)
+            create_save_workspace_call(tar_info[1], ast_type, is_start=False)
             ]
 
 
@@ -161,17 +158,31 @@ def manipulate_stmt(ast_type: ast.stmt):
     raise Exception()
 
 
+file_name = "/home/amirreza/Documents/Sharif/last/trace_test/poe_ai_generated/third.py"
+# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/libdocpkg/consoleviewer.py"
+# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/import_shelve.py"
+# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/pythonpathsetter.py"
+source = open(file_name).read()
+a = ast.parse(source=source, filename=file_name, type_comments=True)
+f1 = open("original.py", "w")
+f1.write(ast.unparse(a))
+f1.close()
+workspace_file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/workspace-saver.py"
 
-    # print(ast.dump(x))
+source_of_workspace = open(workspace_file_name).read()
+workspace_body = ast.parse(source=source_of_workspace, filename=file_name, type_comments=True).body
+
+
 new_a = manipulate_stmt(a)
+new_a.body = workspace_body + new_a.body
 ast.fix_missing_locations(new_a)
 # new_a = manipulate(a)
-f2 = open("new.txt", "w")
+f2 = open("new.py", "w")
 # f2.write(ast.dump(new_a, indent=4))
 f2.write(ast.unparse(new_a))
 f2.close()
 
-# f2 = open("old.txt", "w")
+# f2 = open("old.py", "w")
 # # f2.write(ast.dump(new_a, indent=4))
 # f2.write(ast.unparse(a))
 # f2.close()
