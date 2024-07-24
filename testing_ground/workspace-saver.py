@@ -6,8 +6,9 @@ def save_workspace(line_number, is_before_line, dict_of_values_to_save):
     os.makedirs("/tmp/python-workspace/", exist_ok=True)
     dir_name = base64.b64encode(__file__.encode()).decode()
     os.makedirs(f"/tmp/python-workspace/{dir_name}", exist_ok=True)
+    os.makedirs(f"/tmp/python-workspace/{dir_name}/{line_number}", exist_ok=True)
     my_shelf = shelve.open(
-        f'/tmp/python-workspace/{dir_name}/{line_number}/{is_before_line}.db', 'n')
+        f'/tmp/python-workspace/{dir_name}/{line_number}/{is_before_line}', 'n')
     for key in globals().keys():
         try:
             my_shelf[key] = globals()[key]
