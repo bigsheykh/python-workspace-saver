@@ -1,13 +1,30 @@
 from typing import List, Tuple, Set, Union
 import ast
+import os
+import base64
 
-test_case_common_body = []
-def test_case_creator(ids, ast_type: ast.stmt):
-    test_case_body =  test_case_common_body
-    
-    test_case_body.append(ast_type)
-    
-    ast.Module()
+test_cases = []
+
+def test_case_creator(
+    ids: List[str],
+    ast_type: ast.stmt,
+    test_case_common_body: List[ast.stmt],
+    address: str
+):
+    test_case_body =  test_case_common_body + [ast_type]
+    for id in ids:
+        test_case_body.append(ast.Assert(test=ast.Compare(
+            left=ast.Name(id=id),
+            ops=[ast.Eq()],
+            comparators=[ast.Subscript(
+                value=ast.Name(id="after_shelf"),
+                slice=ast.Constant(value=id)
+            )]
+        )))
+    module = ast.Module(body=test_case_body, type_ignores=[])
+    test_case_file = open(address, "w")
+    test_case_file.write(ast.unparse(module))
+    test_case_file.close()
 
 def merge_expr_info(
     info1: Union[Tuple[bool, Set[str]], None],
@@ -95,16 +112,10 @@ def manipulate_assign_or_expr(ast_type: ast.stmt):
         for target in ast_type.targets:
             tar_info = merge_expr_info(get_info_expr(target), tar_info)
 
-    # print(ast.dump(ast_type, indent=4))
-    # print(ast.unparse(ast_type))
-    # print(expr_info)
-    # print(tar_info)
-    # print()
-    # print()
     if not tar_info[0] or len(tar_info[1]) == 0:
         return [ast_type]
-    # return [ast_type]
 
+    test_cases.append({'lineno': ast_type.lineno, 'line': ast_type, 'ids': tar_info[1]})
     return [create_save_workspace_call(expr_info[1], ast_type, is_start=True),
             ast_type,
             create_save_workspace_call(tar_info[1], ast_type, is_start=False)
@@ -158,7 +169,8 @@ def manipulate_stmt(ast_type: ast.stmt):
     raise Exception()
 
 
-file_name = "/home/amirreza/Documents/Sharif/last/trace_test/poe_ai_generated/third.py"
+file_name = "/home/amirreza/Documents/Sharif/last/trace_test/poe_ai_generated/first.py"
+# file_name = "/home/amirreza/Documents/Sharif/last/trace_test/poe_ai_generated/third.py"
 # file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/libdocpkg/consoleviewer.py"
 # file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/import_shelve.py"
 # file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/robotframework-master/src/robot/pythonpathsetter.py"
@@ -181,6 +193,35 @@ f2 = open("new.py", "w")
 # f2.write(ast.dump(new_a, indent=4))
 f2.write(ast.unparse(new_a))
 f2.close()
+
+
+
+source_body = ast.parse(source=source, filename=file_name, type_comments=True).body
+
+shelf_opener_file_name = "/home/amirreza/Documents/Sharif/last/trace_test/testing_ground/shelf-opener.py"
+
+source_of_shelf_opener = open(shelf_opener_file_name).read()
+shelf_opener_body = ast.parse(source=source_of_shelf_opener,
+                              filename=shelf_opener_file_name,
+                              type_comments=True).body
+
+test_case_common_body = [stmt for stmt in source_body if type(stmt) in [
+    ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef, ast.Import, ast.ImportFrom
+]] + shelf_opener_body
+
+source_address = os.path.abspath("new.py")
+
+os.makedirs("/tmp/python-workspace/", exist_ok=True)
+dir_name = base64.b64encode(source_address.encode()).decode()
+os.makedirs(f"/tmp/python-workspace/{dir_name}", exist_ok=True)
+for test_case in test_cases:
+    line_number = test_case["lineno"]
+    directory_address = f"/tmp/python-workspace/{dir_name}/{line_number}"
+    os.makedirs(directory_address, exist_ok=True)
+    test_case_creator(ids=test_case["ids"],
+                      ast_type=test_case["line"],
+                      test_case_common_body=test_case_common_body,
+                      address=f"{directory_address}/test_case.py")
 
 # f2 = open("old.py", "w")
 # # f2.write(ast.dump(new_a, indent=4))

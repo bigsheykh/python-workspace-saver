@@ -4,11 +4,13 @@ import base64
 
 def save_workspace(line_number, is_before_line, dict_of_values_to_save):
     os.makedirs("/tmp/python-workspace/", exist_ok=True)
-    dir_name = base64.b64encode(__file__.encode()).decode()
-    os.makedirs(f"/tmp/python-workspace/{dir_name}", exist_ok=True)
-    os.makedirs(f"/tmp/python-workspace/{dir_name}/{line_number}", exist_ok=True)
-    my_shelf = shelve.open(
-        f'/tmp/python-workspace/{dir_name}/{line_number}/{is_before_line}', 'n')
+    dir_name = base64.b64encode(os.path.abspath(__file__).encode()).decode()
+    py_directory = "/tmp/python-workspace/" + dir_name
+    os.makedirs(py_directory, exist_ok=True)
+    line_directory = py_directory + "/" + str(line_number)
+    os.makedirs(line_directory, exist_ok=True)
+    file_name = line_directory + "/" + str(is_before_line)
+    my_shelf = shelve.open(file_name, 'n')
     for key in globals().keys():
         try:
             my_shelf[key] = globals()[key]
@@ -16,9 +18,9 @@ def save_workspace(line_number, is_before_line, dict_of_values_to_save):
             #
             # __builtins__, my_shelf, and imported modules can not be shelved.
             #
-            print(f'TypeError shelving: {key}')
+            print('TypeError shelving:', key)
         except:
-            print(f'Error shelving: {key}')
+            print('Error shelving:', key)
 
     for key in dict_of_values_to_save.keys():
         try:
@@ -27,8 +29,8 @@ def save_workspace(line_number, is_before_line, dict_of_values_to_save):
             #
             # __builtins__, my_shelf, and imported modules can not be shelved.
             #
-            print(f'TypeError shelving: {key}')
+            print('TypeError shelving:', key)
         except:
-            print(f'Error shelving: {key}')
+            print('TypeError shelving:', key)
 
     my_shelf.close()
