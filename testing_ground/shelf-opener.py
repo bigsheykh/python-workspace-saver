@@ -6,10 +6,11 @@ after_shelf = shelve.open(str(False))
 for key in before_shelf:
     try:
         globals()[key] = before_shelf[key]
-    except TypeError:
+    # except TypeError:
         #
         # __builtins__, my_shelf, and imported modules can not be shelved.
         #
-        print('TypeError shelving:', key)
+        # print('TypeError shelving:', key)
     except:
-        print('Error shelving:', key)
+        pass
+        # print('Error shelving:', key)

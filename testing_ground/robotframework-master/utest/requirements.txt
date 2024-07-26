@@ -1,4 +1,0 @@
-# External Python modules required by unit tests.
-docutils >= 0.10
-jsonschema
-typing_extensions; python_version <= '3.10'
