@@ -9,29 +9,29 @@ test_cases = []
 
 def get_id_assertion(id: str) -> ast.stmt:
     return ast.If(
-        test=ast.BoolOp(op=ast.And(),values=[
+        test=ast.BoolOp(op=ast.And(), values=[
             ast.Compare(
-            left=ast.Call(func=ast.Name(id="type"),
-                          args=[ast.Name(id=id)],
-                          keywords=[]),
-            ops=[ast.NotEq(), ast.NotEq()],
-            comparators=[
-                ast.Call(func=ast.Name(id="type"),
-                         args=[ast.Name(id="shelve")],
-                         keywords=[]),
-            ],
-        ),
+                left=ast.Call(func=ast.Name(id="type"),
+                              args=[ast.Name(id=id)],
+                              keywords=[]),
+                ops=[ast.NotEq(), ast.NotEq()],
+                comparators=[
+                    ast.Call(func=ast.Name(id="type"),
+                             args=[ast.Name(id="shelve")],
+                             keywords=[]),
+                ],
+            ),
             ast.Compare(
-            left=ast.Call(func=ast.Name(id="type"),
-                          args=[ast.Name(id=id)],
-                          keywords=[]),
-            ops=[ast.NotEq(), ast.NotEq()],
-            comparators=[
-                ast.Call(func=ast.Name(id="type"),
-                         args=[ast.Name(id="print")],
-                         keywords=[]),
-            ],
-        )]),
+                left=ast.Call(func=ast.Name(id="type"),
+                              args=[ast.Name(id=id)],
+                              keywords=[]),
+                ops=[ast.NotEq(), ast.NotEq()],
+                comparators=[
+                    ast.Call(func=ast.Name(id="type"),
+                             args=[ast.Name(id="print")],
+                             keywords=[]),
+                ],
+            )]),
         body=ast.Assert(
             test=ast.Compare(
                 left=ast.Name(id=id),
@@ -224,15 +224,19 @@ def manipulate_stmt(ast_type: ast.stmt):
     print(type(ast_type))
     raise Exception()
 
+
 arg_parser = argparse.ArgumentParser()
 arg_parser.add_argument('file_name')
 arg_parser.add_argument('output_name')
+arg_parser.add_argument('python3_version', type=int, const=11, nargs='?')
 args = arg_parser.parse_args()
 file_name = args.file_name
 output_name = args.output_name
+python3_version = args.python3_version
 
 source = open(file_name).read()
-a = ast.parse(source=source, filename=file_name, type_comments=True)
+a = ast.parse(source=source, filename=file_name,
+              type_comments=True, feature_version=python3_version)
 
 f1 = open("original.py", "w")
 f1.write(ast.unparse(a))
@@ -255,7 +259,7 @@ f2.write(ast.unparse(new_a))
 f2.close()
 
 source_body = ast.parse(source=source, filename=file_name,
-                        type_comments=True).body
+                        type_comments=True, feature_version=python3_version).body
 
 shelf_opener_file_name = os.path.join(code_directory, "shelf-opener.py")
 

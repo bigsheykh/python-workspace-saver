@@ -4,8 +4,9 @@ output_name=$3
 filename=$2
 python_base_version=$1
 
-output_directory=`~/ve/bin/python testing_ground/test-case-creator.py $filename $output_name`
+output_directory=`~/ve/bin/python testing_ground/test-case-creator.py $filename $output_name $python_base_version`
 
+echo ~/ve$python_base_version/bin/python $output_name
 ~/ve$python_base_version/bin/python $output_name 1> /dev/null
 echo $output_directory
 
@@ -21,34 +22,39 @@ counter=0
 for dir in "$output_directory"/*/; do
     dir_name=$(basename "$dir")
     cd $dir
-    for i in {5..13}; do
-        tmpFile=$(mktemp)
-        ~/ve$i/bin/python test_case.py 2> $tmpFile 1> /dev/null
-        err=$(cat $tmpFile)
-        rm $tmpFile
-        counter=$((counter + 1))
-        status="0"
-        error_message=""
-        if [ ! -z "$err" ]; then
-            status="-2"
-            if [[ "$err" == *"invalid syntax"* ]]; then
-                error_message="invalid syntax"
-            elif [[ "$err" == *"results are diffrent"* ]]; then
-                error_message="results are diffrent"
-            elif [[ "$err" == *"has no attribute"* ]]; then
-                error_message="has not the attribute"
-            elif [[ "$err" == *"Error"* ]]; then
-                error_message="unknown Error"
-                echo $err
-            elif [[ "$err" == *"DeprecationWarning"* ]]; then
-                error_message="Deprecation Warning"
-            else
-                error_message="unknown"
-                echo $err
+    if [ -e False.db ]; then
+        for i in {5..13}; do
+            tmpFile=$(mktemp)
+            ~/ve$i/bin/python test_case.py 2> $tmpFile 1> /dev/null
+            err=$(cat $tmpFile)
+            rm $tmpFile
+            counter=$((counter + 1))
+            status="0"
+            error_message=""
+            if [ ! -z "$err" ]; then
+                status="-2"
+                if [[ "$err" == *"invalid syntax"* ]]; then
+                    error_message="invalid syntax"
+                elif [[ "$err" == *"results are diffrent"* ]]; then
+                    error_message="results are diffrent"
+                elif [[ "$err" == *"has no attribute"* ]]; then
+                    error_message="has not the attribute"
+                elif [[ "$err" == *"Error"* ]]; then
+                    error_message="unknown Error"
+                    echo $err
+                elif [[ "$err" == *"DeprecationWarning"* ]]; then
+                    status="-1"
+                    error_message="Deprecation Warning"
+                else
+                    error_message="unknown"
+                    echo $err
+                fi
             fi
-        fi
-        echo $i,$dir_name,$status,$error_message >> "$csv_file"
-    done
+            echo $i,$dir_name,$status,$error_message >> "$csv_file"
+        done
+    else
+        echo line number $dir_name didnt run
+    fi
 done
 
 cd $current_dir
