@@ -32,13 +32,14 @@ for dir in "$output_directory"/*/; do
         if [ ! -z "$err" ]; then
             status="-2"
             if [[ "$err" == *"invalid syntax"* ]]; then
-                error_message="invalid synt7ax"
+                error_message="invalid syntax"
             elif [[ "$err" == *"results are diffrent"* ]]; then
                 error_message="results are diffrent"
             elif [[ "$err" == *"has no attribute"* ]]; then
                 error_message="has not the attribute"
             elif [[ "$err" == *"Error"* ]]; then
                 error_message="unknown Error"
+                echo $err
             elif [[ "$err" == *"DeprecationWarning"* ]]; then
                 error_message="Deprecation Warning"
             else

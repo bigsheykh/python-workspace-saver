@@ -164,6 +164,9 @@ def manipulate_assign_or_expr(ast_type: ast.stmt):
         for target in ast_type.targets:
             tar_info = merge_expr_info(get_info_expr(target), tar_info)
 
+    if type(ast_type) == ast.AugAssign:
+        expr_info = tar_info
+
     if not tar_info[0] or len(tar_info[1]) == 0:
         return [ast_type]
 
