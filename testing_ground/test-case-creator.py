@@ -182,11 +182,12 @@ def manipulate_assign_or_expr(ast_type: ast.stmt):
     ]
 
 
-def manipulate_body(ast_body: List[ast.AST]) -> List[ast.AST]:
+def manipulate_body(ast_body: List[ast.AST],
+                    father_type = None) -> List[ast.AST]:
     new_body: List[ast.AST] = []
 
     for x in ast_body:
-        manipulated = manipulate_stmt(x)
+        manipulated = manipulate_stmt(x, father_type)
         if type(manipulated) == type([]):
             new_body += manipulated
         else:
@@ -194,17 +195,20 @@ def manipulate_body(ast_body: List[ast.AST]) -> List[ast.AST]:
     return new_body
 
 
-def manipulate_stmt(ast_type: ast.stmt):
+def manipulate_stmt(ast_type: ast.stmt,
+                    father_type = None):
     if type(ast_type) == ast.Match:
         for i in range(len(ast_type.cases)):
             manipulate_stmt(ast_type.cases[i])
         return ast_type
 
     if type(ast_type) in [ast.Assign, ast.Expr, ast.AugAssign, ast.AnnAssign]:
+        if father_type == ast.ClassDef:
+            return ast_type
         return manipulate_assign_or_expr(ast_type)
 
     if hasattr(ast_type, "body"):
-        ast_type.body = manipulate_body(ast_type.body)
+        ast_type.body = manipulate_body(ast_type.body, type(ast_type))
 
     if hasattr(ast_type, "orelse"):
         ast_type.orelse = manipulate_body(ast_type.orelse)
