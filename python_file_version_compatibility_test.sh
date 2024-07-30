@@ -12,9 +12,12 @@ echo $output_directory
 
 # Set the base directory
 current_dir=`pwd`
-filename_base=$(basename "$filename")
-filename_without_ext="${filename_base%.*}"
+filename_without_ext="${output_name%.*}"
 csv_file="$current_dir/$filename_without_ext.csv"
+diff_with_original_file="$current_dir/$filename_without_ext._diff.html"
+table_file="$current_dir/$filename_without_ext._table.html"
+
+diff --side-by-side -d --color=always original.py $output_name | aha --black > $diff_with_original_file
 
 echo python version,line_number,status,error message > "$csv_file"
 
@@ -60,3 +63,6 @@ done
 cd $current_dir
 
 echo "CSV file created: $csv_file"
+./csv_to_html.awk $csv_file > $table_file
+
+rm original.py
