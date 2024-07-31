@@ -1,0 +1,43 @@
+diff -u -r -a -N changelogs/changelogs/custom/pypi/numpy.py /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/numpy.py
+--- changelogs/changelogs/custom/pypi/numpy.py	1970-01-01 03:30:00.000000000 +0330
++++ /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/numpy.py	2024-07-31 04:56:40.573486552 +0330
+@@ -0,0 +1,19 @@
++def get_urls(releases, **kwargs):
++    urls = set()
++    for release in releases:
++        urls.add(
++            # 'https://raw.githubusercontent.com/numpy/numpy/main/doc/changelog/1.12.0-changelog.rst'
++            # 'https://github.com/numpy/numpy/releases/download/v{release}/{release}-changelog.rst'
++            'https://github.com/numpy/numpy/releases/download/v{release}/README.rst'.format(release=release)
++            # 'https://raw.githubusercontent.com'
++            # '/numpy/numpy/main/doc/changelog/{release}-changelog.rst'.format(release=release)
++        )
++    return urls, set()
++
++
++def get_head(line, releases, **kwargs):
++    # This is the same as SQLAlchemy.
++    for release in releases:
++        if "NumPy {} Release Notes".format(release) == line:
++            return release
++    return False
+diff -u -r -a -N changelogs/changelogs/custom/pypi/pandas.py /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/pandas.py
+--- changelogs/changelogs/custom/pypi/pandas.py	2024-07-30 22:06:46.580182018 +0330
++++ /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/pandas.py	2024-07-31 04:13:01.781585215 +0330
+@@ -2,8 +2,7 @@
+     urls = set()
+     for release in releases:
+         urls.add(
+-            'https://raw.githubusercontent.com'
+-            '/pandas-dev/pandas/master/doc/source/whatsnew/v{release}.txt'.format(release=release)
++            'https://pandas.pydata.org/docs/_sources/whatsnew/v{release}.rst.txt'.format(release=release)
+         )
+     return urls, set()
+ 
+diff -u -r -a -N changelogs/changelogs/custom/pypi/pyyaml.py /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/pyyaml.py
+--- changelogs/changelogs/custom/pypi/pyyaml.py	2024-07-30 22:06:46.581182019 +0330
++++ /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/pyyaml.py	2024-07-31 04:17:10.698079155 +0330
+@@ -1,2 +1,2 @@
+ def get_urls(releases, **kwargs):
+-    return {"http://svn.pyyaml.org/pyyaml/trunk/CHANGES"}, set()
++    return {"https://raw.githubusercontent.com/yaml/pyyaml/master/CHANGES"}, set()
