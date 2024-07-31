@@ -16,8 +16,13 @@ filename_without_ext="${output_name%.*}"
 csv_file="$current_dir/$filename_without_ext.csv"
 diff_with_original_file="$current_dir/$filename_without_ext._diff.html"
 table_file="$current_dir/$filename_without_ext._table.html"
+new_file="$current_dir/$filename_without_ext.py.html"
+original_file="$current_dir/$filename_without_ext._old_py.html"
 
+yapf -i original.py $output_name
 diff --side-by-side -d --color=always original.py $output_name | aha --black > $diff_with_original_file
+pygmentize -f html -O full -o $original_file original.py
+pygmentize -f html -O full -o $new_file $output_name
 
 echo python version,line_number,status,error message > "$csv_file"
 
@@ -57,12 +62,13 @@ for dir in "$output_directory"/*/; do
         done
     else
         echo line number $dir_name didnt run
+        echo ,$dir_name,-,didnt run >> "$csv_file"
     fi
 done
 
 cd $current_dir
 
 echo "CSV file created: $csv_file"
-./csv_to_html.awk $csv_file > $table_file
+csvtotable $csv_file $table_file
 
 rm original.py

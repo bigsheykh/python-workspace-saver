@@ -1,0 +1,6 @@
+[submodule "safety-db"]
+	path = safety-db
+	url = https://github.com/pyupio/safety-db.git
+[submodule "changelogs"]
+	path = changelogs
+	url = https://github.com/pyupio/changelogs.git

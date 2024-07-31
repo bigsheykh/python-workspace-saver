@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ~/ve/bin/python -m pip install changelogs csvtotable Pygments -i https://mirrors.aliyun.com/pypi/simple/
+
 TEST_FILES_DIRECTORY=poe_ai_generated
 RESULTS_DIRECTORY=compatibility_results
 
