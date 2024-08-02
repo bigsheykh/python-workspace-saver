@@ -14,3 +14,5 @@ mkdir -p $RESULTS_DIRECTORY
 ./python_file_version_compatibility_test.sh 7  $TEST_FILES_DIRECTORY/fourth.py $RESULTS_DIRECTORY/fourth_modified.py
 ./python_file_version_compatibility_test.sh 5  $TEST_FILES_DIRECTORY/fifth.py  $RESULTS_DIRECTORY/fifth_modified.py
 ./python_file_version_compatibility_test.sh 11 $TEST_FILES_DIRECTORY/sixth.py  $RESULTS_DIRECTORY/sixth_modified.py
+
+./python_pacakge_version_compatibility_test.sh 9 poe_ai_generated/scrapy_test.py compatibility_results/scipy_modified.py scrapy 1.7.4

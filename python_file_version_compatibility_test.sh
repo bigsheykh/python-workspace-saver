@@ -47,6 +47,8 @@ for dir in "$output_directory"/*/; do
                     error_message="results are diffrent"
                 elif [[ "$err" == *"has no attribute"* ]]; then
                     error_message="has not the attribute"
+                elif [[ "$err" == *"ModuleNotFoundError"* ]]; then
+                    error_message="ModuleNotFoundError"
                 elif [[ "$err" == *"Error"* ]]; then
                     error_message="unknown Error"
                     echo $err

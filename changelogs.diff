@@ -41,3 +41,21 @@ diff -u -r -a -N changelogs/changelogs/custom/pypi/pyyaml.py /home/amirreza/ve/l
  def get_urls(releases, **kwargs):
 -    return {"http://svn.pyyaml.org/pyyaml/trunk/CHANGES"}, set()
 +    return {"https://raw.githubusercontent.com/yaml/pyyaml/master/CHANGES"}, set()
+diff -u -r -a -N changelogs/changelogs/custom/pypi/scipy.py /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/scipy.py
+--- changelogs/changelogs/custom/pypi/scipy.py	1970-01-01 03:30:00.000000000 +0330
++++ /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/scipy.py	2024-07-31 04:56:40.573486552 +0330
+@@ -0,0 +1,8 @@
++def get_urls(releases, **kwargs):
++    urls = set()
++    for release in releases:
++        urls.add(
++            "https://raw.githubusercontent.com/scipy/scipy/main/doc/source/release/{release}-notes.rst".format(release=release)
++        )
++    return urls, set()
++
+diff -u -r -a -N changelogs/changelogs/custom/pypi/scrapy.py /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/scrapy.py
+--- changelogs/changelogs/custom/pypi/scrapy.py	1970-01-01 03:30:00.000000000 +0330
++++ /home/amirreza/ve/lib/python3.11/site-packages/changelogs/custom/pypi/scrapy.py	2024-07-31 04:56:40.573486552 +0330
+@@ -0,0 +1,2 @@
++def get_urls(releases, **kwargs):
++    return {"https://raw.githubusercontent.com/scrapy/scrapy/master/docs/news.rst"}, set()
