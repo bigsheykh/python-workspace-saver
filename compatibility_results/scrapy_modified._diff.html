@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import scrapy							import scrapy
+from warnings import catch_warnings				from warnings import catch_warnings
+
+<span style="color:lime;">							      &gt;	save_workspace(5, True, {})
+</span>d = {'a': 123, u'b': b'c', u'd': u'e', 77: u'e'}		d = {'a': 123, u'b': b'c', u'd': u'e', 77: u'e'}
+<span style="color:lime;">							      &gt;	save_workspace(5, False, {'d': d})
+</span><span style="color:lime;">							      &gt;	save_workspace(6, True, {'scrapy': scrapy, 'd': d})
+</span>d2 = scrapy.utils.python.stringify_dict(d, keys_only=False)	d2 = scrapy.utils.python.stringify_dict(d, keys_only=False)
+<span style="color:lime;">							      &gt;	save_workspace(6, False, {'d2': d2, 'd': d, 'scrapy': scrapy}
+</span><span style="color:lime;">							      &gt;	save_workspace(8, True, {})
+</span>tuples = [('a', 123), (u'b', 'c'), (u'd', u'e'), (77, u'e')]	tuples = [('a', 123), (u'b', 'c'), (u'd', u'e'), (77, u'e')]
+<span style="color:lime;">							      &gt;	save_workspace(8, False, {'tuples': tuples})
+</span><span style="color:lime;">							      &gt;	save_workspace(9, True, {'tuples': tuples, 'dict': dict})
+</span>d3 = dict(tuples)						d3 = dict(tuples)
+<span style="color:lime;">							      &gt;	save_workspace(9, False, {'d3': d3, 'tuples': tuples, 'dict':
+</span><span style="color:lime;">							      &gt;	save_workspace(10, True, {'scrapy': scrapy, 'tuples': tuples}
+</span>d4 = scrapy.utils.python.stringify_dict(tuples, keys_only=Fal	d4 = scrapy.utils.python.stringify_dict(tuples, keys_only=Fal
+<span style="color:lime;">							      &gt;	save_workspace(10, False, {'scrapy': scrapy, 'tuples': tuples
+</span><span style="color:lime;">							      &gt;	save_workspace(12, True, {})
+</span>d5 = {'a': 123, u'b': 'c', u'd': u'e', 77: u'e'}		d5 = {'a': 123, u'b': 'c', u'd': u'e', 77: u'e'}
+<span style="color:lime;">							      &gt;	save_workspace(12, False, {'d5': d5})
+</span><span style="color:lime;">							      &gt;	save_workspace(13, True, {'scrapy': scrapy, 'd5': d5})
+</span>d6 = scrapy.utils.python.stringify_dict(d5)			d6 = scrapy.utils.python.stringify_dict(d5)
+<span style="color:lime;">							      &gt;	save_workspace(13, False, {'scrapy': scrapy, 'd6': d6, 'd5': 
+</span>with catch_warnings(record=True) as warnings:			with catch_warnings(record=True) as warnings:
+<span style="color:lime;">							      &gt;	    save_workspace(16, True, {'scrapy': scrapy})
+</span>    a_dict_item = scrapy.item.DictItem()			    a_dict_item = scrapy.item.DictItem()
+<span style="color:lime;">							      &gt;	    save_workspace(16, False, {'scrapy': scrapy, 'a_dict_item
+</span><span style="color:lime;">							      &gt;	    save_workspace(17, True, {
+</span><span style="color:lime;">							      &gt;	        'len': len,
+</span><span style="color:lime;">							      &gt;	        'warnings': warnings,
+</span><span style="color:lime;">							      &gt;	        'print': print
+</span><span style="color:lime;">							      &gt;	    })
+</span>    print(len(warnings))					    print(len(warnings))
+<span style="color:lime;">							      &gt;	    save_workspace(17, False, {
+</span><span style="color:lime;">							      &gt;	        'len': len,
+</span><span style="color:lime;">							      &gt;	        'warnings': warnings,
+</span><span style="color:lime;">							      &gt;	        'print': print
+</span><span style="color:lime;">							      &gt;	    })
+</span></pre>
+</body>
+</html>

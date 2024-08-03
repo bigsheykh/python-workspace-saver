@@ -1,2 +1,4 @@
-compatibility_results/
-changelog-info/
+changelog-info/celery
+changelog-info/python-dateutil
+changelog-info/pyyaml
+changelog-info/scipy

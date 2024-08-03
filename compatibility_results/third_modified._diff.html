@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import random							import random
+import math							import math
+
+<span style="color:lime;">							      &gt;	save_workspace(7, True, {'random': random})
+</span>random_number = random.randint(1, 10)				random_number = random.randint(1, 10)
+<span style="color:lime;">							      &gt;	save_workspace(7, False, {'random_number': random_number, 'ra
+</span><span style="color:lime;">							      &gt;	save_workspace(10, True, {'math': math, 'random_number': rand
+</span>square_root = math.sqrt(random_number)				square_root = math.sqrt(random_number)
+<span style="color:lime;">							      &gt;	save_workspace(10, False, {
+</span><span style="color:lime;">							      &gt;	    'square_root': square_root,
+</span><span style="color:lime;">							      &gt;	    'random_number': random_number,
+</span><span style="color:lime;">							      &gt;	    'math': math
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(13, True, {'print': print, 'random_number': ra
+</span>print(f'Random number: {random_number}')			print(f'Random number: {random_number}')
+<span style="color:lime;">							      &gt;	save_workspace(13, False, {'print': print, 'random_number': r
+</span><span style="color:lime;">							      &gt;	save_workspace(14, True, {'print': print, 'square_root': squa
+</span>print(f'Square root of the random number: {square_root}')	print(f'Square root of the random number: {square_root}')
+<span style="color:lime;">							      &gt;	save_workspace(14, False, {'print': print, 'square_root': squ
+</span>random_numbers = [random.randint(1, 100) for _ in range(10)]	random_numbers = [random.randint(1, 100) for _ in range(10)]
+<span style="color:lime;">							      &gt;	save_workspace(20, True, {'print': print})
+</span>print('\nRandom numbers:')					print('\nRandom numbers:')
+<span style="color:lime;">							      &gt;	save_workspace(20, False, {'print': print})
+</span>for num in random_numbers:					for num in random_numbers:
+<span style="color:lime;">							      &gt;	    save_workspace(22, True, {'print': print, 'num': num})
+</span>    print(num)							    print(num)
+<span style="color:lime;">							      &gt;	    save_workspace(22, False, {'print': print, 'num': num})
+</span><span style="color:lime;">							      &gt;	save_workspace(25, True, {'random_numbers': random_numbers, '
+</span>sum_of_numbers = sum(random_numbers)				sum_of_numbers = sum(random_numbers)
+<span style="color:lime;">							      &gt;	save_workspace(25, False, {
+</span><span style="color:lime;">							      &gt;	    'sum_of_numbers': sum_of_numbers,
+</span><span style="color:lime;">							      &gt;	    'sum': sum,
+</span><span style="color:lime;">							      &gt;	    'random_numbers': random_numbers
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(28, True, {'print': print, 'sum_of_numbers': s
+</span>print(f'\nSum of random numbers: {sum_of_numbers}')		print(f'\nSum of random numbers: {sum_of_numbers}')
+<span style="color:lime;">							      &gt;	save_workspace(28, False, {'print': print, 'sum_of_numbers': 
+</span><span style="color:lime;">							      &gt;	save_workspace(31, True, {
+</span><span style="color:lime;">							      &gt;	    'sum_of_numbers': sum_of_numbers,
+</span><span style="color:lime;">							      &gt;	    'len': len,
+</span><span style="color:lime;">							      &gt;	    'random_numbers': random_numbers
+</span><span style="color:lime;">							      &gt;	})
+</span>average = sum_of_numbers / len(random_numbers)			average = sum_of_numbers / len(random_numbers)
+<span style="color:lime;">							      &gt;	save_workspace(
+</span><span style="color:lime;">							      &gt;	    31, False, {
+</span><span style="color:lime;">							      &gt;	        'average': average,
+</span><span style="color:lime;">							      &gt;	        'sum_of_numbers': sum_of_numbers,
+</span><span style="color:lime;">							      &gt;	        'len': len,
+</span><span style="color:lime;">							      &gt;	        'random_numbers': random_numbers
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	save_workspace(34, True, {'average': average, 'print': print}
+</span>print(f'Average of random numbers: {average}')			print(f'Average of random numbers: {average}')
+<span style="color:lime;">							      &gt;	save_workspace(34, False, {'average': average, 'print': print
+</span><span style="color:lime;">							      &gt;	save_workspace(37, True, {'print': print})
+</span>print('\nPython file execution complete. Outputs generated.')	print('\nPython file execution complete. Outputs generated.')
+<span style="color:lime;">							      &gt;	save_workspace(37, False, {'print': print})
+</span></pre>
+</body>
+</html>

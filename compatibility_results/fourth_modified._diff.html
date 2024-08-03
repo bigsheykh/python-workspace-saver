@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import math							import math
+import datetime							import datetime
+import string							import string
+import itertools						import itertools
+
+
+def fibonacci(n):						def fibonacci(n):
+<span style="color:lime;">							      &gt;	    save_workspace(8, True, {})
+</span>    a, b = (0, 1)						    a, b = (0, 1)
+<span style="color:lime;">							      &gt;	    save_workspace(8, False, {'b': b, 'a': a})
+</span><span style="color:lime;">							      &gt;	    save_workspace(9, True, {})
+</span>    sequence = []						    sequence = []
+<span style="color:lime;">							      &gt;	    save_workspace(9, False, {'sequence': sequence})
+</span>    for _ in range(n):						    for _ in range(n):
+<span style="color:lime;">							      &gt;	        save_workspace(11, True, {'sequence': sequence, 'a': 
+</span>        sequence.append(a)					        sequence.append(a)
+<span style="color:lime;">							      &gt;	        save_workspace(11, False, {'sequence': sequence, 'a':
+</span><span style="color:lime;">							      &gt;	        save_workspace(12, True, {'b': b, 'a': a})
+</span>        a, b = (b, a + b)					        a, b = (b, a + b)
+<span style="color:lime;">							      &gt;	        save_workspace(12, False, {'b': b, 'a': a})
+</span>    return sequence						    return sequence
+
+
+def fibonacci_sum(n):						def fibonacci_sum(n):
+    return sum(fibonacci(n))					    return sum(fibonacci(n))
+
+
+def factorials(n):						def factorials(n):
+    return [math.factorial(i) for i in range(n + 1)]		    return [math.factorial(i) for i in range(n + 1)]
+
+
+def palindromic_numbers(limit):					def palindromic_numbers(limit):
+    return [num for num in range(1, limit + 1) if str(num) ==	    return [num for num in range(1, limit + 1) if str(num) ==
+
+
+def pythagorean_triples(limit):					def pythagorean_triples(limit):
+    return [(a, b, c) for a in range(1, limit + 1)		    return [(a, b, c) for a in range(1, limit + 1)
+            for b in range(a, limit + 1) for c in range(b, li	            for b in range(a, limit + 1) for c in range(b, li
+            if a**2 + b**2 == c**2]				            if a**2 + b**2 == c**2]
+
+
+def leap_years(start, end):					def leap_years(start, end):
+    return [							    return [
+        year for year in range(start, end + 1)			        year for year in range(start, end + 1)
+        if year % 4 == 0 and year % 100 != 0 or year % 400 ==	        if year % 4 == 0 and year % 100 != 0 or year % 400 ==
+    ]								    ]
+
+
+def prime_numbers(limit):					def prime_numbers(limit):
+<span style="color:lime;">							      &gt;	    save_workspace(41, True, {})
+</span>    primes = []							    primes = []
+<span style="color:lime;">							      &gt;	    save_workspace(41, False, {'primes': primes})
+</span>    for num in range(2, limit + 1):				    for num in range(2, limit + 1):
+        is_prime = all((num % i != 0 for i in range(2,		        is_prime = all((num % i != 0 for i in range(2,
+                                                    int(math.	                                                    int(math.
+        if is_prime:						        if is_prime:
+<span style="color:lime;">							      &gt;	            save_workspace(45, True, {'primes': primes, 'num'
+</span>            primes.append(num)					            primes.append(num)
+<span style="color:lime;">							      &gt;	            save_workspace(45, False, {'primes': primes, 'num
+</span>    return primes						    return primes
+
+
+<span style="color:lime;">							      &gt;	save_workspace(49, True, {'fibonacci': fibonacci})
+</span>fib_sequence = fibonacci(20)					fib_sequence = fibonacci(20)
+<span style="color:lime;">							      &gt;	save_workspace(49, False, {
+</span><span style="color:lime;">							      &gt;	    'fibonacci': fibonacci,
+</span><span style="color:lime;">							      &gt;	    'fib_sequence': fib_sequence
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(50, True, {'fibonacci_sum': fibonacci_sum})
+</span>fib_sum = fibonacci_sum(20)					fib_sum = fibonacci_sum(20)
+<span style="color:lime;">							      &gt;	save_workspace(50, False, {'fib_sum': fib_sum, 'fibonacci_sum
+</span><span style="color:lime;">							      &gt;	save_workspace(51, True, {'math': math})
+</span>fact_of_10 = math.factorial(10)					fact_of_10 = math.factorial(10)
+<span style="color:lime;">							      &gt;	save_workspace(51, False, {'math': math, 'fact_of_10': fact_o
+</span><span style="color:lime;">							      &gt;	save_workspace(52, True, {'palindromic_numbers': palindromic_
+</span>palindromes = palindromic_numbers(1000)				palindromes = palindromic_numbers(1000)
+<span style="color:lime;">							      &gt;	save_workspace(52, False, {
+</span><span style="color:lime;">							      &gt;	    'palindromes': palindromes,
+</span><span style="color:lime;">							      &gt;	    'palindromic_numbers': palindromic_numbers
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(53, True, {'pythagorean_triples': pythagorean_
+</span>pythagorean = pythagorean_triples(20)				pythagorean = pythagorean_triples(20)
+<span style="color:lime;">							      &gt;	save_workspace(53, False, {
+</span><span style="color:lime;">							      &gt;	    'pythagorean_triples': pythagorean_triples,
+</span><span style="color:lime;">							      &gt;	    'pythagorean': pythagorean
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(54, True, {'leap_years': leap_years})
+</span>leaps = leap_years(2000, 2100)					leaps = leap_years(2000, 2100)
+<span style="color:lime;">							      &gt;	save_workspace(54, False, {'leaps': leaps, 'leap_years': leap
+</span><span style="color:lime;">							      &gt;	save_workspace(55, True, {'prime_numbers': prime_numbers})
+</span>primes = prime_numbers(100)					primes = prime_numbers(100)
+<span style="color:lime;">							      &gt;	save_workspace(55, False, {'primes': primes, 'prime_numbers':
+</span><span style="color:lime;">							      &gt;	save_workspace(56, True, {'datetime': datetime})
+</span>current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:	current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:
+<span style="color:lime;">							      &gt;	save_workspace(56, False, {'current_time': current_time, 'dat
+</span><span style="color:lime;">							      &gt;	save_workspace(57, True, {'math': math})
+</span>pi_value = math.pi						pi_value = math.pi
+<span style="color:lime;">							      &gt;	save_workspace(57, False, {'math': math, 'pi_value': pi_value
+</span><span style="color:lime;">							      &gt;	save_workspace(60, True, {'print': print, 'fib_sequence': fib
+</span>print('Fibonacci sequence:', fib_sequence)			print('Fibonacci sequence:', fib_sequence)
+<span style="color:lime;">							      &gt;	save_workspace(60, False, {'print': print, 'fib_sequence': fi
+</span><span style="color:lime;">							      &gt;	save_workspace(61, True, {'fib_sum': fib_sum, 'print': print}
+</span>print('Sum of Fibonacci sequence:', fib_sum)			print('Sum of Fibonacci sequence:', fib_sum)
+<span style="color:lime;">							      &gt;	save_workspace(61, False, {'fib_sum': fib_sum, 'print': print
+</span><span style="color:lime;">							      &gt;	save_workspace(62, True, {'fact_of_10': fact_of_10, 'print': 
+</span>print('Factorial of 10:', fact_of_10)				print('Factorial of 10:', fact_of_10)
+<span style="color:lime;">							      &gt;	save_workspace(62, False, {'fact_of_10': fact_of_10, 'print':
+</span><span style="color:lime;">							      &gt;	save_workspace(63, True, {'palindromes': palindromes, 'print'
+</span>print('Palindromic numbers up to 1000:', palindromes)		print('Palindromic numbers up to 1000:', palindromes)
+<span style="color:lime;">							      &gt;	save_workspace(63, False, {'palindromes': palindromes, 'print
+</span><span style="color:lime;">							      &gt;	save_workspace(64, True, {'print': print, 'pythagorean': pyth
+</span>print('Pythagorean triples up to 20:', pythagorean)		print('Pythagorean triples up to 20:', pythagorean)
+<span style="color:lime;">							      &gt;	save_workspace(64, False, {'print': print, 'pythagorean': pyt
+</span><span style="color:lime;">							      &gt;	save_workspace(65, True, {'leaps': leaps, 'print': print})
+</span>print('Leap years from 2000 to 2100:', leaps)			print('Leap years from 2000 to 2100:', leaps)
+<span style="color:lime;">							      &gt;	save_workspace(65, False, {'leaps': leaps, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(66, True, {'primes': primes, 'print': print})
+</span>print('Prime numbers up to 100:', primes)			print('Prime numbers up to 100:', primes)
+<span style="color:lime;">							      &gt;	save_workspace(66, False, {'primes': primes, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(67, True, {'current_time': current_time, 'prin
+</span>print('Current date and time:', current_time)			print('Current date and time:', current_time)
+<span style="color:lime;">							      &gt;	save_workspace(67, False, {'current_time': current_time, 'pri
+</span><span style="color:lime;">							      &gt;	save_workspace(68, True, {'print': print, 'pi_value': pi_valu
+</span>print('Value of pi:', pi_value)					print('Value of pi:', pi_value)
+<span style="color:lime;">							      &gt;	save_workspace(68, False, {'print': print, 'pi_value': pi_val
+</span>ascii_chars = [chr(i) for i in range(32, 127)]			ascii_chars = [chr(i) for i in range(32, 127)]
+binary_numbers = [bin(i)[2:].zfill(8) for i in range(256)]	binary_numbers = [bin(i)[2:].zfill(8) for i in range(256)]
+hex_numbers = [hex(i)[2:].zfill(2) for i in range(256)]		hex_numbers = [hex(i)[2:].zfill(2) for i in range(256)]
+<span style="color:lime;">							      &gt;	save_workspace(77, True, {'string': string})
+</span>letters = string.ascii_letters					letters = string.ascii_letters
+<span style="color:lime;">							      &gt;	save_workspace(77, False, {'string': string, 'letters': lette
+</span>permutations = [''.join(p) for p in itertools.permutations(le	permutations = [''.join(p) for p in itertools.permutations(le
+combinations = [						combinations = [
+    ''.join(map(str, c)) for c in itertools.combinations(rang	    ''.join(map(str, c)) for c in itertools.combinations(rang
+]								]
+<span style="color:lime;">							      &gt;	save_workspace(
+</span><span style="color:lime;">							      &gt;	    82, True, {
+</span><span style="color:lime;">							      &gt;	        'hex_numbers': hex_numbers,
+</span><span style="color:lime;">							      &gt;	        'ascii_chars': ascii_chars,
+</span><span style="color:lime;">							      &gt;	        'combinations': combinations,
+</span><span style="color:lime;">							      &gt;	        'binary_numbers': binary_numbers,
+</span><span style="color:lime;">							      &gt;	        'permutations': permutations
+</span><span style="color:lime;">							      &gt;	    })
+</span>results = {							results = {
+    'ASCII characters': ascii_chars,				    'ASCII characters': ascii_chars,
+    'Binary numbers': binary_numbers,				    'Binary numbers': binary_numbers,
+    'Hex numbers': hex_numbers,					    'Hex numbers': hex_numbers,
+    'Permutations of 4 letters': permutations,			    'Permutations of 4 letters': permutations,
+    'Combinations of 5 numbers': combinations			    'Combinations of 5 numbers': combinations
+}								}
+<span style="color:lime;">							      &gt;	save_workspace(
+</span><span style="color:lime;">							      &gt;	    82, False, {
+</span><span style="color:lime;">							      &gt;	        'results': results,
+</span><span style="color:lime;">							      &gt;	        'hex_numbers': hex_numbers,
+</span><span style="color:lime;">							      &gt;	        'combinations': combinations,
+</span><span style="color:lime;">							      &gt;	        'binary_numbers': binary_numbers,
+</span><span style="color:lime;">							      &gt;	        'ascii_chars': ascii_chars,
+</span><span style="color:lime;">							      &gt;	        'permutations': permutations
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	save_workspace(98, True, {'print': print})
+</span>print('Output generation complete.')				print('Output generation complete.')
+<span style="color:lime;">							      &gt;	save_workspace(98, False, {'print': print})
+</span></pre>
+</body>
+</html>

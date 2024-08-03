@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	save_workspace(5, True, {})
+</span>async = 10							async = 10
+<span style="color:lime;">							      &gt;	save_workspace(5, False, {'async': async})
+</span>
+
+def async ():							def async ():
+<span style="color:lime;">							      &gt;	    save_workspace(9, True, {'print': print})
+</span>    print(&quot;This is an async function named 'async'&quot;)		    print(&quot;This is an async function named 'async'&quot;)
+<span style="color:lime;">							      &gt;	    save_workspace(9, False, {'print': print})
+</span>
+
+def print_async():						def print_async():
+<span style="color:lime;">							      &gt;	    save_workspace(13, True, {'print': print, 'async': async}
+</span>    print(async)						    print(async)
+<span style="color:lime;">							      &gt;	    save_workspace(13, False, {'print': print, 'async': async
+</span>
+
+def use_async_function():					def use_async_function():
+<span style="color:lime;">							      &gt;	    save_workspace(17, True, {'print': print})
+</span>    print(&quot;Calling the async function 'async':&quot;)		    print(&quot;Calling the async function 'async':&quot;)
+<span style="color:lime;">							      &gt;	    save_workspace(17, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(18, True, {'async': async})
+</span>    async ()							    async ()
+<span style="color:lime;">							      &gt;	    save_workspace(18, False, {'async': async})
+</span>
+
+def print_numbers():						def print_numbers():
+<span style="color:lime;">							      &gt;	    save_workspace(22, True, {'print': print})
+</span>    print('Printing a list of numbers:')			    print('Printing a list of numbers:')
+<span style="color:lime;">							      &gt;	    save_workspace(22, False, {'print': print})
+</span>    for i in range(1, 11):					    for i in range(1, 11):
+<span style="color:lime;">							      &gt;	        save_workspace(24, True, {'print': print, 'i': i})
+</span>        print(i)						        print(i)
+<span style="color:lime;">							      &gt;	        save_workspace(24, False, {'print': print, 'i': i})
+</span>
+
+def print_strings():						def print_strings():
+<span style="color:lime;">							      &gt;	    save_workspace(28, True, {'print': print})
+</span>    print('Printing a list of strings:')			    print('Printing a list of strings:')
+<span style="color:lime;">							      &gt;	    save_workspace(28, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(29, True, {})
+</span>    strings = ['apple', 'banana', 'cherry', 'date', 'elderber	    strings = ['apple', 'banana', 'cherry', 'date', 'elderber
+<span style="color:lime;">							      &gt;	    save_workspace(29, False, {'strings': strings})
+</span>    for s in strings:						    for s in strings:
+<span style="color:lime;">							      &gt;	        save_workspace(31, True, {'print': print, 's': s})
+</span>        print(s)						        print(s)
+<span style="color:lime;">							      &gt;	        save_workspace(31, False, {'print': print, 's': s})
+</span>
+
+def print_dictionaries():					def print_dictionaries():
+<span style="color:lime;">							      &gt;	    save_workspace(35, True, {'print': print})
+</span>    print('Printing a list of dictionaries:')			    print('Printing a list of dictionaries:')
+<span style="color:lime;">							      &gt;	    save_workspace(35, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(36, True, {})
+</span>    dictionaries = [{						    dictionaries = [{
+        'name': 'Alice',					        'name': 'Alice',
+        'age': 30						        'age': 30
+    }, {							    }, {
+        'name': 'Bob',						        'name': 'Bob',
+        'age': 25						        'age': 25
+    }, {							    }, {
+        'name': 'Charlie',					        'name': 'Charlie',
+        'age': 40						        'age': 40
+    }]								    }]
+<span style="color:lime;">							      &gt;	    save_workspace(36, False, {'dictionaries': dictionaries})
+</span>    for d in dictionaries:					    for d in dictionaries:
+<span style="color:lime;">							      &gt;	        save_workspace(42, True, {'print': print, 'd': d})
+</span>        print(d)						        print(d)
+<span style="color:lime;">							      &gt;	        save_workspace(42, False, {'print': print, 'd': d})
+</span>
+
+def print_tuples():						def print_tuples():
+<span style="color:lime;">							      &gt;	    save_workspace(46, True, {'print': print})
+</span>    print('Printing a list of tuples:')				    print('Printing a list of tuples:')
+<span style="color:lime;">							      &gt;	    save_workspace(46, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(47, True, {})
+</span>    tuples = [('apple', 1), ('banana', 2), ('cherry', 3)]	    tuples = [('apple', 1), ('banana', 2), ('cherry', 3)]
+<span style="color:lime;">							      &gt;	    save_workspace(47, False, {'tuples': tuples})
+</span>    for t in tuples:						    for t in tuples:
+<span style="color:lime;">							      &gt;	        save_workspace(53, True, {'print': print, 't': t})
+</span>        print(t)						        print(t)
+<span style="color:lime;">							      &gt;	        save_workspace(53, False, {'print': print, 't': t})
+</span>
+
+def print_sets():						def print_sets():
+<span style="color:lime;">							      &gt;	    save_workspace(57, True, {'print': print})
+</span>    print('Printing a list of sets:')				    print('Printing a list of sets:')
+<span style="color:lime;">							      &gt;	    save_workspace(57, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(58, True, {})
+</span>    sets = [{'apple', 'banana', 'cherry'}, {'date', 'elderber	    sets = [{'apple', 'banana', 'cherry'}, {'date', 'elderber
+            {'grape', 'honeydew', 'kiwi'}]			            {'grape', 'honeydew', 'kiwi'}]
+<span style="color:lime;">							      &gt;	    save_workspace(58, False, {'sets': sets})
+</span>    for s in sets:						    for s in sets:
+<span style="color:lime;">							      &gt;	        save_workspace(64, True, {'print': print, 's': s})
+</span>        print(s)						        print(s)
+<span style="color:lime;">							      &gt;	        save_workspace(64, False, {'print': print, 's': s})
+</span>
+
+def print_lists():						def print_lists():
+<span style="color:lime;">							      &gt;	    save_workspace(68, True, {'print': print})
+</span>    print('Printing a list of lists:')				    print('Printing a list of lists:')
+<span style="color:lime;">							      &gt;	    save_workspace(68, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(69, True, {})
+</span>    lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]			    lists = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+<span style="color:lime;">							      &gt;	    save_workspace(69, False, {'lists': lists})
+</span>    for l in lists:						    for l in lists:
+<span style="color:lime;">							      &gt;	        save_workspace(75, True, {'print': print, 'l': l})
+</span>        print(l)						        print(l)
+<span style="color:lime;">							      &gt;	        save_workspace(75, False, {'print': print, 'l': l})
+</span>
+
+def print_booleans():						def print_booleans():
+<span style="color:lime;">							      &gt;	    save_workspace(79, True, {'print': print})
+</span>    print('Printing a list of booleans:')			    print('Printing a list of booleans:')
+<span style="color:lime;">							      &gt;	    save_workspace(79, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(80, True, {})
+</span>    booleans = [True, False, True, False, True]			    booleans = [True, False, True, False, True]
+<span style="color:lime;">							      &gt;	    save_workspace(80, False, {'booleans': booleans})
+</span>    for b in booleans:						    for b in booleans:
+<span style="color:lime;">							      &gt;	        save_workspace(82, True, {'print': print, 'b': b})
+</span>        print(b)						        print(b)
+<span style="color:lime;">							      &gt;	        save_workspace(82, False, {'print': print, 'b': b})
+</span>
+
+def print_floats():						def print_floats():
+<span style="color:lime;">							      &gt;	    save_workspace(86, True, {'print': print})
+</span>    print('Printing a list of floats:')				    print('Printing a list of floats:')
+<span style="color:lime;">							      &gt;	    save_workspace(86, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(87, True, {})
+</span>    floats = [1.0, 2.5, 3.75, 4.25, 5.0]			    floats = [1.0, 2.5, 3.75, 4.25, 5.0]
+<span style="color:lime;">							      &gt;	    save_workspace(87, False, {'floats': floats})
+</span>    for f in floats:						    for f in floats:
+<span style="color:lime;">							      &gt;	        save_workspace(89, True, {'print': print, 'f': f})
+</span>        print(f)						        print(f)
+<span style="color:lime;">							      &gt;	        save_workspace(89, False, {'print': print, 'f': f})
+</span>
+
+def print_complex_numbers():					def print_complex_numbers():
+<span style="color:lime;">							      &gt;	    save_workspace(93, True, {'print': print})
+</span>    print('Printing a list of complex numbers:')		    print('Printing a list of complex numbers:')
+<span style="color:lime;">							      &gt;	    save_workspace(93, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(94, True, {})
+</span>    complex_numbers = [1 + 2j, 3 - 4j, 5 + 6j]			    complex_numbers = [1 + 2j, 3 - 4j, 5 + 6j]
+<span style="color:lime;">							      &gt;	    save_workspace(94, False, {'complex_numbers': complex_num
+</span>    for c in complex_numbers:					    for c in complex_numbers:
+<span style="color:lime;">							      &gt;	        save_workspace(100, True, {'print': print, 'c': c})
+</span>        print(c)						        print(c)
+<span style="color:lime;">							      &gt;	        save_workspace(100, False, {'print': print, 'c': c})
+</span>
+
+def print_bytes():						def print_bytes():
+<span style="color:lime;">							      &gt;	    save_workspace(104, True, {'print': print})
+</span>    print('Printing a list of bytes:')				    print('Printing a list of bytes:')
+<span style="color:lime;">							      &gt;	    save_workspace(104, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(105, True, {})
+</span>    bytes_list = [b'hello', b'world', b'!']			    bytes_list = [b'hello', b'world', b'!']
+<span style="color:lime;">							      &gt;	    save_workspace(105, False, {'bytes_list': bytes_list})
+</span>    for b in bytes_list:					    for b in bytes_list:
+<span style="color:lime;">							      &gt;	        save_workspace(111, True, {'print': print, 'b': b})
+</span>        print(b)						        print(b)
+<span style="color:lime;">							      &gt;	        save_workspace(111, False, {'print': print, 'b': b})
+</span>
+
+def print_bytearrays():						def print_bytearrays():
+<span style="color:lime;">							      &gt;	    save_workspace(115, True, {'print': print})
+</span>    print('Printing a list of bytearrays:')			    print('Printing a list of bytearrays:')
+<span style="color:lime;">							      &gt;	    save_workspace(115, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(116, True, {'bytearray': bytearray})
+</span>    bytearrays_list = [						    bytearrays_list = [
+        bytearray(b'hello'),					        bytearray(b'hello'),
+        bytearray(b'world'),					        bytearray(b'world'),
+        bytearray(b'!')						        bytearray(b'!')
+    ]								    ]
+<span style="color:lime;">							      &gt;	    save_workspace(116, False, {
+</span><span style="color:lime;">							      &gt;	        'bytearrays_list': bytearrays_list,
+</span><span style="color:lime;">							      &gt;	        'bytearray': bytearray
+</span><span style="color:lime;">							      &gt;	    })
+</span>    for ba in bytearrays_list:					    for ba in bytearrays_list:
+<span style="color:lime;">							      &gt;	        save_workspace(122, True, {'print': print, 'ba': ba})
+</span>        print(ba)						        print(ba)
+<span style="color:lime;">							      &gt;	        save_workspace(122, False, {'print': print, 'ba': ba}
+</span>
+
+def print_ranges():						def print_ranges():
+<span style="color:lime;">							      &gt;	    save_workspace(127, True, {'print': print})
+</span>    print('Printing a list of ranges:')				    print('Printing a list of ranges:')
+<span style="color:lime;">							      &gt;	    save_workspace(127, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(128, True, {'range': range})
+</span>    ranges_list = [range(1, 11), range(10, 21, 2), range(20, 	    ranges_list = [range(1, 11), range(10, 21, 2), range(20, 
+<span style="color:lime;">							      &gt;	    save_workspace(128, False, {'range': range, 'ranges_list'
+</span>    for r in ranges_list:					    for r in ranges_list:
+<span style="color:lime;">							      &gt;	        save_workspace(134, True, {'print': print, 'r': r})
+</span>        print(r)						        print(r)
+<span style="color:lime;">							      &gt;	        save_workspace(134, False, {'print': print, 'r': r})
+</span>
+
+def print_frozen_sets():					def print_frozen_sets():
+<span style="color:lime;">							      &gt;	    save_workspace(138, True, {'print': print})
+</span>    print('Printing a list of frozen sets:')			    print('Printing a list of frozen sets:')
+<span style="color:lime;">							      &gt;	    save_workspace(138, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(139, True, {'frozenset': frozenset})
+</span>    frozen_sets_list = [					    frozen_sets_list = [
+        frozenset({'apple', 'banana', 'cherry'}),		        frozenset({'apple', 'banana', 'cherry'}),
+        frozenset({'date', 'elderberry', 'fig'}),		        frozenset({'date', 'elderberry', 'fig'}),
+        frozenset({'grape', 'honeydew', 'kiwi'})		        frozenset({'grape', 'honeydew', 'kiwi'})
+    ]								    ]
+<span style="color:lime;">							      &gt;	    save_workspace(139, False, {
+</span><span style="color:lime;">							      &gt;	        'frozen_sets_list': frozen_sets_list,
+</span><span style="color:lime;">							      &gt;	        'frozenset': frozenset
+</span><span style="color:lime;">							      &gt;	    })
+</span>    for fs in frozen_sets_list:					    for fs in frozen_sets_list:
+<span style="color:lime;">							      &gt;	        save_workspace(145, True, {'print': print, 'fs': fs})
+</span>        print(fs)						        print(fs)
+<span style="color:lime;">							      &gt;	        save_workspace(145, False, {'print': print, 'fs': fs}
+</span>
+
+def print_exceptions():						def print_exceptions():
+<span style="color:lime;">							      &gt;	    save_workspace(150, True, {'print': print})
+</span>    print('Printing a list of exceptions:')			    print('Printing a list of exceptions:')
+<span style="color:lime;">							      &gt;	    save_workspace(150, False, {'print': print})
+</span>    try:							    try:
+        1 / 0							        1 / 0
+    except ZeroDivisionError as e:				    except ZeroDivisionError as e:
+        exceptions_list = [e]					        exceptions_list = [e]
+    for ex in exceptions_list:					    for ex in exceptions_list:
+<span style="color:lime;">							      &gt;	        save_workspace(158, True, {'print': print, 'ex': ex})
+</span>        print(ex)						        print(ex)
+<span style="color:lime;">							      &gt;	        save_workspace(158, False, {'print': print, 'ex': ex}
+</span>
+
+def print_values():						def print_values():
+<span style="color:lime;">							      &gt;	    save_workspace(163, True, {'print': print})
+</span>    print('Printing a list of values:')				    print('Printing a list of values:')
+<span style="color:lime;">							      &gt;	    save_workspace(163, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        164, True, {
+</span><span style="color:lime;">							      &gt;	            'range': range,
+</span><span style="color:lime;">							      &gt;	            'memoryview': memoryview,
+</span><span style="color:lime;">							      &gt;	            'bytearray': bytearray,
+</span><span style="color:lime;">							      &gt;	            'frozenset': frozenset
+</span><span style="color:lime;">							      &gt;	        })
+</span>    values_list = [						    values_list = [
+        1, 'hello', [1, 2, 3], {				        1, 'hello', [1, 2, 3], {
+            'name': 'Alice',					            'name': 'Alice',
+            'age': 30						            'age': 30
+        }, (1, 2, 3), {1, 2, 3},				        }, (1, 2, 3), {1, 2, 3},
+        frozenset({1, 2, 3}),					        frozenset({1, 2, 3}),
+        range(1, 11), b'hello',					        range(1, 11), b'hello',
+        bytearray(b'hello'),					        bytearray(b'hello'),
+        memoryview(b'hello'), 1 + 2j, True, 1.0			        memoryview(b'hello'), 1 + 2j, True, 1.0
+    ]								    ]
+<span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        164, False, {
+</span><span style="color:lime;">							      &gt;	            'range': range,
+</span><span style="color:lime;">							      &gt;	            'frozenset': frozenset,
+</span><span style="color:lime;">							      &gt;	            'values_list': values_list,
+</span><span style="color:lime;">							      &gt;	            'bytearray': bytearray,
+</span><span style="color:lime;">							      &gt;	            'memoryview': memoryview
+</span><span style="color:lime;">							      &gt;	        })
+</span>    for v in values_list:					    for v in values_list:
+<span style="color:lime;">							      &gt;	        save_workspace(181, True, {'print': print, 'v': v})
+</span>        print(v)						        print(v)
+<span style="color:lime;">							      &gt;	        save_workspace(181, False, {'print': print, 'v': v})
+</span>
+
+def print_objects():						def print_objects():
+<span style="color:lime;">							      &gt;	    save_workspace(185, True, {'print': print})
+</span>    print('Printing a list of objects:')			    print('Printing a list of objects:')
+<span style="color:lime;">							      &gt;	    save_workspace(185, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        186, True, {
+</span><span style="color:lime;">							      &gt;	            'print_tuples': print_tuples,
+</span><span style="color:lime;">							      &gt;	            'print_strings': print_strings,
+</span><span style="color:lime;">							      &gt;	            'print_frozen_sets': print_frozen_sets,
+</span><span style="color:lime;">							      &gt;	            'print_async': print_async,
+</span><span style="color:lime;">							      &gt;	            'print_floats': print_floats,
+</span><span style="color:lime;">							      &gt;	            'print_booleans': print_booleans,
+</span><span style="color:lime;">							      &gt;	            'print_bytearrays': print_bytearrays,
+</span><span style="color:lime;">							      &gt;	            'print_values': print_values,
+</span><span style="color:lime;">							      &gt;	            'print_complex_numbers': print_complex_numbers,
+</span><span style="color:lime;">							      &gt;	            'print_numbers': print_numbers,
+</span><span style="color:lime;">							      &gt;	            'print_lists': print_lists,
+</span><span style="color:lime;">							      &gt;	            'use_async_function': use_async_function,
+</span><span style="color:lime;">							      &gt;	            'print_dictionaries': print_dictionaries,
+</span><span style="color:lime;">							      &gt;	            'print_sets': print_sets,
+</span><span style="color:lime;">							      &gt;	            'print_ranges': print_ranges,
+</span><span style="color:lime;">							      &gt;	            'print_exceptions': print_exceptions,
+</span><span style="color:lime;">							      &gt;	            'print_bytes': print_bytes
+</span><span style="color:lime;">							      &gt;	        })
+</span>    objects_list = [						    objects_list = [
+        print_async, use_async_function, print_numbers, print	        print_async, use_async_function, print_numbers, print
+        print_dictionaries, print_tuples, print_sets, print_l	        print_dictionaries, print_tuples, print_sets, print_l
+        print_booleans, print_floats, print_complex_numbers, 	        print_booleans, print_floats, print_complex_numbers, 
+        print_bytearrays, print_ranges, print_frozen_sets, pr	        print_bytearrays, print_ranges, print_frozen_sets, pr
+        print_values						        print_values
+    ]								    ]
+<span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        186, False, {
+</span><span style="color:lime;">							      &gt;	            'objects_list': objects_list,
+</span><span style="color:lime;">							      &gt;	            'print_tuples': print_tuples,
+</span><span style="color:lime;">							      &gt;	            'print_strings': print_strings,
+</span><span style="color:lime;">							      &gt;	            'print_frozen_sets': print_frozen_sets,
+</span><span style="color:lime;">							      &gt;	            'print_async': print_async,
+</span><span style="color:lime;">							      &gt;	            'print_floats': print_floats,
+</span><span style="color:lime;">							      &gt;	            'print_booleans': print_booleans,
+</span><span style="color:lime;">							      &gt;	            'print_bytearrays': print_bytearrays,
+</span><span style="color:lime;">							      &gt;	            'print_values': print_values,
+</span><span style="color:lime;">							      &gt;	            'print_complex_numbers': print_complex_numbers,
+</span><span style="color:lime;">							      &gt;	            'print_numbers': print_numbers,
+</span><span style="color:lime;">							      &gt;	            'print_lists': print_lists,
+</span><span style="color:lime;">							      &gt;	            'use_async_function': use_async_function,
+</span><span style="color:lime;">							      &gt;	            'print_dictionaries': print_dictionaries,
+</span><span style="color:lime;">							      &gt;	            'print_sets': print_sets,
+</span><span style="color:lime;">							      &gt;	            'print_ranges': print_ranges,
+</span><span style="color:lime;">							      &gt;	            'print_exceptions': print_exceptions,
+</span><span style="color:lime;">							      &gt;	            'print_bytes': print_bytes
+</span><span style="color:lime;">							      &gt;	        })
+</span>    for o in objects_list:					    for o in objects_list:
+<span style="color:lime;">							      &gt;	        save_workspace(206, True, {'print': print, 'o': o})
+</span>        print(o)						        print(o)
+<span style="color:lime;">							      &gt;	        save_workspace(206, False, {'print': print, 'o': o})
+</span>
+
+def call_all_functions():					def call_all_functions():
+<span style="color:lime;">							      &gt;	    save_workspace(210, True, {'print': print})
+</span>    print('Calling all functions:')				    print('Calling all functions:')
+<span style="color:lime;">							      &gt;	    save_workspace(210, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(211, True, {'print_async': print_async})
+</span>    print_async()						    print_async()
+<span style="color:lime;">							      &gt;	    save_workspace(211, False, {'print_async': print_async})
+</span><span style="color:lime;">							      &gt;	    save_workspace(212, True, {'use_async_function': use_asyn
+</span>    use_async_function()					    use_async_function()
+<span style="color:lime;">							      &gt;	    save_workspace(212, False, {'use_async_function': use_asy
+</span><span style="color:lime;">							      &gt;	    save_workspace(213, True, {'print_numbers': print_numbers
+</span>    print_numbers()						    print_numbers()
+<span style="color:lime;">							      &gt;	    save_workspace(213, False, {'print_numbers': print_number
+</span><span style="color:lime;">							      &gt;	    save_workspace(214, True, {'print_strings': print_strings
+</span>    print_strings()						    print_strings()
+<span style="color:lime;">							      &gt;	    save_workspace(214, False, {'print_strings': print_string
+</span><span style="color:lime;">							      &gt;	    save_workspace(215, True, {'print_dictionaries': print_di
+</span>    print_dictionaries()					    print_dictionaries()
+<span style="color:lime;">							      &gt;	    save_workspace(215, False, {'print_dictionaries': print_d
+</span><span style="color:lime;">							      &gt;	    save_workspace(216, True, {'print_tuples': print_tuples})
+</span>    print_tuples()						    print_tuples()
+<span style="color:lime;">							      &gt;	    save_workspace(216, False, {'print_tuples': print_tuples}
+</span><span style="color:lime;">							      &gt;	    save_workspace(217, True, {'print_sets': print_sets})
+</span>    print_sets()						    print_sets()
+<span style="color:lime;">							      &gt;	    save_workspace(217, False, {'print_sets': print_sets})
+</span><span style="color:lime;">							      &gt;	    save_workspace(218, True, {'print_lists': print_lists})
+</span>    print_lists()						    print_lists()
+<span style="color:lime;">							      &gt;	    save_workspace(218, False, {'print_lists': print_lists})
+</span><span style="color:lime;">							      &gt;	    save_workspace(219, True, {'print_booleans': print_boolea
+</span>    print_booleans()						    print_booleans()
+<span style="color:lime;">							      &gt;	    save_workspace(219, False, {'print_booleans': print_boole
+</span><span style="color:lime;">							      &gt;	    save_workspace(220, True, {'print_floats': print_floats})
+</span>    print_floats()						    print_floats()
+<span style="color:lime;">							      &gt;	    save_workspace(220, False, {'print_floats': print_floats}
+</span><span style="color:lime;">							      &gt;	    save_workspace(221, True, {'print_complex_numbers': print
+</span>    print_complex_numbers()					    print_complex_numbers()
+<span style="color:lime;">							      &gt;	    save_workspace(221, False,
+</span><span style="color:lime;">							      &gt;	                   {'print_complex_numbers': print_complex_nu
+</span><span style="color:lime;">							      &gt;	    save_workspace(222, True, {'print_bytes': print_bytes})
+</span>    print_bytes()						    print_bytes()
+<span style="color:lime;">							      &gt;	    save_workspace(222, False, {'print_bytes': print_bytes})
+</span><span style="color:lime;">							      &gt;	    save_workspace(223, True, {'print_bytearrays': print_byte
+</span>    print_bytearrays()						    print_bytearrays()
+<span style="color:lime;">							      &gt;	    save_workspace(223, False, {'print_bytearrays': print_byt
+</span><span style="color:lime;">							      &gt;	    save_workspace(224, True, {'print_ranges': print_ranges})
+</span>    print_ranges()						    print_ranges()
+<span style="color:lime;">							      &gt;	    save_workspace(224, False, {'print_ranges': print_ranges}
+</span><span style="color:lime;">							      &gt;	    save_workspace(225, True, {'print_frozen_sets': print_fro
+</span>    print_frozen_sets()						    print_frozen_sets()
+<span style="color:lime;">							      &gt;	    save_workspace(225, False, {'print_frozen_sets': print_fr
+</span><span style="color:lime;">							      &gt;	    save_workspace(226, True, {'print_objects': print_objects
+</span>    print_objects()						    print_objects()
+<span style="color:lime;">							      &gt;	    save_workspace(226, False, {'print_objects': print_object
+</span><span style="color:lime;">							      &gt;	    save_workspace(227, True, {'print_values': print_values})
+</span>    print_values()						    print_values()
+<span style="color:lime;">							      &gt;	    save_workspace(227, False, {'print_values': print_values}
+</span>
+
+<span style="color:lime;">							      &gt;	save_workspace(229, True, {'call_all_functions': call_all_fun
+</span>call_all_functions()						call_all_functions()
+<span style="color:lime;">							      &gt;	save_workspace(229, False, {'call_all_functions': call_all_fu
+</span></pre>
+</body>
+</html>

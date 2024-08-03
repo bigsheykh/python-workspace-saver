@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import pandas							import pandas
+
+<span style="color:lime;">							      &gt;	save_workspace(4, True, {})
+</span>array = [[1, 2, 3], [4, 'hello', 6], [7, 8, 9]]			array = [[1, 2, 3], [4, 'hello', 6], [7, 8, 9]]
+<span style="color:lime;">							      &gt;	save_workspace(4, False, {'array': array})
+</span><span style="color:lime;">							      &gt;	save_workspace(7, True, {'array': array, 'list': list, 'panda
+</span>df_a = list(pandas.DataFrame(array, columns=['A', 2, 'C'])['A	df_a = list(pandas.DataFrame(array, columns=['A', 2, 'C'])['A
+<span style="color:lime;">							      &gt;	save_workspace(7, False, {
+</span><span style="color:lime;">							      &gt;	    'array': array,
+</span><span style="color:lime;">							      &gt;	    'list': list,
+</span><span style="color:lime;">							      &gt;	    'pandas': pandas,
+</span><span style="color:lime;">							      &gt;	    'df_a': df_a
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(8, True, {'array': array, 'list': list, 'panda
+</span>df_2 = list(pandas.DataFrame(array, columns=['A', 2, 'C'])[2]	df_2 = list(pandas.DataFrame(array, columns=['A', 2, 'C'])[2]
+<span style="color:lime;">							      &gt;	save_workspace(8, False, {
+</span><span style="color:lime;">							      &gt;	    'array': array,
+</span><span style="color:lime;">							      &gt;	    'pandas': pandas,
+</span><span style="color:lime;">							      &gt;	    'list': list,
+</span><span style="color:lime;">							      &gt;	    'df_2': df_2
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(9, True, {'array': array, 'list': list, 'panda
+</span>df_c = list(pandas.DataFrame(array, columns=['A', 2, 'C'])['C	df_c = list(pandas.DataFrame(array, columns=['A', 2, 'C'])['C
+<span style="color:lime;">							      &gt;	save_workspace(9, False, {
+</span><span style="color:lime;">							      &gt;	    'array': array,
+</span><span style="color:lime;">							      &gt;	    'pandas': pandas,
+</span><span style="color:lime;">							      &gt;	    'df_c': df_c,
+</span><span style="color:lime;">							      &gt;	    'list': list
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(11, True, {'array': array, 'pandas': pandas})
+</span>pandas.DataFrame.from_dict(					pandas.DataFrame.from_dict(
+    pandas.DataFrame(array, columns=['A', 2,			    pandas.DataFrame(array, columns=['A', 2,
+                                     'C']).to_dict()).info(nu	                                     'C']).to_dict()).info(nu
+<span style="color:lime;">							      &gt;	save_workspace(11, False, {'array': array, 'pandas': pandas})
+</span></pre>
+</body>
+</html>

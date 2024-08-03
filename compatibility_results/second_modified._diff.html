@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import math							import math
+import random							import random
+import datetime							import datetime
+
+<span style="color:lime;">							      &gt;	save_workspace(5, True, {'print': print})
+</span>print('Welcome to the Python script with no inputs!')		print('Welcome to the Python script with no inputs!')
+<span style="color:lime;">							      &gt;	save_workspace(5, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(7, True, {'print': print})
+</span>print('Here are some random numbers:')				print('Here are some random numbers:')
+<span style="color:lime;">							      &gt;	save_workspace(7, False, {'print': print})
+</span>for i in range(10):						for i in range(10):
+<span style="color:lime;">							      &gt;	    save_workspace(9, True, {'print': print, 'random': random
+</span>    print(random.randint(1, 100))				    print(random.randint(1, 100))
+<span style="color:lime;">							      &gt;	    save_workspace(9, False, {'print': print, 'random': rando
+</span><span style="color:lime;">							      &gt;	save_workspace(11, True, {'print': print})
+</span>print('\nHere are some mathematical calculations:')		print('\nHere are some mathematical calculations:')
+<span style="color:lime;">							      &gt;	save_workspace(11, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(12, True, {'print': print, 'math': math})
+</span>print('The value of pi is:', math.pi)				print('The value of pi is:', math.pi)
+<span style="color:lime;">							      &gt;	save_workspace(12, False, {'print': print, 'math': math})
+</span><span style="color:lime;">							      &gt;	save_workspace(13, True, {'print': print, 'math': math})
+</span>print('The square root of 25 is:', math.sqrt(25))		print('The square root of 25 is:', math.sqrt(25))
+<span style="color:lime;">							      &gt;	save_workspace(13, False, {'print': print, 'math': math})
+</span><span style="color:lime;">							      &gt;	save_workspace(14, True, {'print': print, 'math': math})
+</span>print('The sine of 45 degrees is:', math.sin(math.radians(45)	print('The sine of 45 degrees is:', math.sin(math.radians(45)
+<span style="color:lime;">							      &gt;	save_workspace(14, False, {'print': print, 'math': math})
+</span><span style="color:lime;">							      &gt;	save_workspace(16, True, {'print': print})
+</span>print(&quot;\nHere's the current date and time:&quot;)			print(&quot;\nHere's the current date and time:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(16, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(17, True, {'datetime': datetime})
+</span>now = datetime.datetime.now()					now = datetime.datetime.now()
+<span style="color:lime;">							      &gt;	save_workspace(17, False, {'now': now, 'datetime': datetime})
+</span><span style="color:lime;">							      &gt;	save_workspace(18, True, {'now': now, 'print': print})
+</span>print(now.strftime('%Y-%m-%d %H:%M:%S'))			print(now.strftime('%Y-%m-%d %H:%M:%S'))
+<span style="color:lime;">							      &gt;	save_workspace(18, False, {'now': now, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(20, True, {'print': print})
+</span>print(&quot;\nHere's a random joke:&quot;)				print(&quot;\nHere's a random joke:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(20, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(21, True, {})
+</span>jokes = [							jokes = [
+    &quot;Why don't scientists trust atoms? Because they make up e	    &quot;Why don't scientists trust atoms? Because they make up e
+    'Why was the math book sad? Because of all of its problem	    'Why was the math book sad? Because of all of its problem
+    &quot;Why can't a bicycle stand up by itself? Because it's two	    &quot;Why can't a bicycle stand up by itself? Because it's two
+    'Why did the tomato turn red? Because it saw the salad dr	    'Why did the tomato turn red? Because it saw the salad dr
+    'Why did the scarecrow win an award? Because he was outst	    'Why did the scarecrow win an award? Because he was outst
+]								]
+<span style="color:lime;">							      &gt;	save_workspace(21, False, {'jokes': jokes})
+</span><span style="color:lime;">							      &gt;	save_workspace(28, True, {'jokes': jokes, 'print': print, 'ra
+</span>print(random.choice(jokes))					print(random.choice(jokes))
+<span style="color:lime;">							      &gt;	save_workspace(28, False, {'jokes': jokes, 'print': print, 'r
+</span><span style="color:lime;">							      &gt;	save_workspace(30, True, {'print': print})
+</span>print(&quot;\nHere's a list of the first 20 Fibonacci numbers:&quot;)	print(&quot;\nHere's a list of the first 20 Fibonacci numbers:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(30, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(31, True, {})
+</span>a, b = (0, 1)							a, b = (0, 1)
+<span style="color:lime;">							      &gt;	save_workspace(31, False, {'a': a, 'b': b})
+</span><span style="color:lime;">							      &gt;	save_workspace(32, True, {'a': a, 'b': b})
+</span>fibonacci_numbers = [a, b]					fibonacci_numbers = [a, b]
+<span style="color:lime;">							      &gt;	save_workspace(32, False, {
+</span><span style="color:lime;">							      &gt;	    'a': a,
+</span><span style="color:lime;">							      &gt;	    'fibonacci_numbers': fibonacci_numbers,
+</span><span style="color:lime;">							      &gt;	    'b': b
+</span><span style="color:lime;">							      &gt;	})
+</span>for i in range(18):						for i in range(18):
+<span style="color:lime;">							      &gt;	    save_workspace(34, True, {'a': a, 'b': b})
+</span>    a, b = (b, a + b)						    a, b = (b, a + b)
+<span style="color:lime;">							      &gt;	    save_workspace(34, False, {'a': a, 'b': b})
+</span><span style="color:lime;">							      &gt;	    save_workspace(35, True, {'fibonacci_numbers': fibonacci_
+</span>    fibonacci_numbers.append(b)					    fibonacci_numbers.append(b)
+<span style="color:lime;">							      &gt;	    save_workspace(35, False, {'fibonacci_numbers': fibonacci
+</span><span style="color:lime;">							      &gt;	save_workspace(36, True, {
+</span><span style="color:lime;">							      &gt;	    'print': print,
+</span><span style="color:lime;">							      &gt;	    'fibonacci_numbers': fibonacci_numbers
+</span><span style="color:lime;">							      &gt;	})
+</span>print(fibonacci_numbers)					print(fibonacci_numbers)
+<span style="color:lime;">							      &gt;	save_workspace(36, False, {
+</span><span style="color:lime;">							      &gt;	    'print': print,
+</span><span style="color:lime;">							      &gt;	    'fibonacci_numbers': fibonacci_numbers
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(38, True, {'print': print})
+</span>print(&quot;\nHere's a random binary number:&quot;)			print(&quot;\nHere's a random binary number:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(38, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(39, True, {'random': random})
+</span>binary_number = ''.join(random.choices(['0', '1'], k=8))	binary_number = ''.join(random.choices(['0', '1'], k=8))
+<span style="color:lime;">							      &gt;	save_workspace(39, False, {'binary_number': binary_number, 'r
+</span><span style="color:lime;">							      &gt;	save_workspace(40, True, {'print': print, 'binary_number': bi
+</span>print(binary_number)						print(binary_number)
+<span style="color:lime;">							      &gt;	save_workspace(40, False, {'print': print, 'binary_number': b
+</span><span style="color:lime;">							      &gt;	save_workspace(42, True, {'print': print})
+</span>print(&quot;\nHere's the binary representation of the number 42:&quot;)	print(&quot;\nHere's the binary representation of the number 42:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(42, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(43, True, {'print': print, 'bin': bin})
+</span>print(bin(42))							print(bin(42))
+<span style="color:lime;">							      &gt;	save_workspace(43, False, {'print': print, 'bin': bin})
+</span><span style="color:lime;">							      &gt;	save_workspace(45, True, {'print': print})
+</span>print(&quot;\nHere's a random hexadecimal number:&quot;)			print(&quot;\nHere's a random hexadecimal number:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(45, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(46, True, {'random': random, 'hex': hex})
+</span>hex_number = hex(random.randint(0, 255))			hex_number = hex(random.randint(0, 255))
+<span style="color:lime;">							      &gt;	save_workspace(46, False, {
+</span><span style="color:lime;">							      &gt;	    'hex': hex,
+</span><span style="color:lime;">							      &gt;	    'hex_number': hex_number,
+</span><span style="color:lime;">							      &gt;	    'random': random
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(47, True, {'print': print, 'hex_number': hex_n
+</span>print(hex_number)						print(hex_number)
+<span style="color:lime;">							      &gt;	save_workspace(47, False, {'print': print, 'hex_number': hex_
+</span><span style="color:lime;">							      &gt;	save_workspace(49, True, {'print': print})
+</span>print(&quot;\nHere's the hexadecimal representation of the number 	print(&quot;\nHere's the hexadecimal representation of the number 
+<span style="color:lime;">							      &gt;	save_workspace(49, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(50, True, {'print': print, 'hex': hex})
+</span>print(hex(123))							print(hex(123))
+<span style="color:lime;">							      &gt;	save_workspace(50, False, {'print': print, 'hex': hex})
+</span><span style="color:lime;">							      &gt;	save_workspace(52, True, {'print': print})
+</span>print(&quot;\nHere's a random ASCII character:&quot;)			print(&quot;\nHere's a random ASCII character:&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(52, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(53, True, {'chr': chr, 'random': random})
+</span>ascii_char = chr(random.randint(33, 126))			ascii_char = chr(random.randint(33, 126))
+<span style="color:lime;">							      &gt;	save_workspace(53, False, {
+</span><span style="color:lime;">							      &gt;	    'chr': chr,
+</span><span style="color:lime;">							      &gt;	    'ascii_char': ascii_char,
+</span><span style="color:lime;">							      &gt;	    'random': random
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(54, True, {'print': print, 'ascii_char': ascii
+</span>print(ascii_char)						print(ascii_char)
+<span style="color:lime;">							      &gt;	save_workspace(54, False, {'print': print, 'ascii_char': asci
+</span><span style="color:lime;">							      &gt;	save_workspace(56, True, {'print': print})
+</span>print(&quot;\nHere's the ASCII value of the letter 'A':&quot;)		print(&quot;\nHere's the ASCII value of the letter 'A':&quot;)
+<span style="color:lime;">							      &gt;	save_workspace(56, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(57, True, {'print': print, 'ord': ord})
+</span>print(ord('A'))							print(ord('A'))
+<span style="color:lime;">							      &gt;	save_workspace(57, False, {'print': print, 'ord': ord})
+</span><span style="color:lime;">							      &gt;	save_workspace(59, True, {'print': print})
+</span>print('\nThanks for running the script!')			print('\nThanks for running the script!')
+<span style="color:lime;">							      &gt;	save_workspace(59, False, {'print': print})
+</span></pre>
+</body>
+</html>

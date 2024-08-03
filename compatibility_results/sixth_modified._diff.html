@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>from typing import List, Tuple, Dict, Set, Union, Optional	from typing import List, Tuple, Dict, Set, Union, Optional
+from dataclasses import dataclass				from dataclasses import dataclass
+from enum import Enum, auto					from enum import Enum, auto
+from collections import namedtuple				from collections import namedtuple
+from functools import lru_cache					from functools import lru_cache
+from time import sleep						from time import sleep
+import math							import math
+import asyncio							import asyncio
+
+
+@dataclass							@dataclass
+class Person:							class Person:
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    A simple dataclass representing a person.			    A simple dataclass representing a person.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    name: str							    name: str
+    age: int							    age: int
+    occupation: str = 'Unknown'					    occupation: str = 'Unknown'
+
+
+class TrafficLight(Enum):					class TrafficLight(Enum):
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    An enum representing traffic light colors.			    An enum representing traffic light colors.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    RED = auto()						    RED = auto()
+    YELLOW = auto()						    YELLOW = auto()
+    GREEN = auto()						    GREEN = auto()
+
+
+<span style="color:lime;">							      &gt;	save_workspace(29, True, {'namedtuple': namedtuple})
+</span>Point = namedtuple('Point', ['x', 'y'])				Point = namedtuple('Point', ['x', 'y'])
+<span style="color:lime;">							      &gt;	save_workspace(29, False, {'namedtuple': namedtuple, 'Point':
+</span>
+
+def sum_and_average(numbers: List[int]) -&gt; Tuple[int, float]:	def sum_and_average(numbers: List[int]) -&gt; Tuple[int, float]:
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Calculates the sum and average of a list of integers.	    Calculates the sum and average of a list of integers.
+
+    Args:							    Args:
+        numbers: A list of integers.				        numbers: A list of integers.
+
+    Returns:							    Returns:
+        A tuple containing the sum and average of the numbers	        A tuple containing the sum and average of the numbers
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(42, True, {'sum': sum, 'numbers': numbers}
+</span>    total = sum(numbers)					    total = sum(numbers)
+<span style="color:lime;">							      &gt;	    save_workspace(42, False, {'sum': sum, 'total': total, 'n
+</span><span style="color:lime;">							      &gt;	    save_workspace(43, True, {'len': len, 'total': total, 'nu
+</span>    average = total / len(numbers)				    average = total / len(numbers)
+<span style="color:lime;">							      &gt;	    save_workspace(43, False, {
+</span><span style="color:lime;">							      &gt;	        'total': total,
+</span><span style="color:lime;">							      &gt;	        'numbers': numbers,
+</span><span style="color:lime;">							      &gt;	        'average': average,
+</span><span style="color:lime;">							      &gt;	        'len': len
+</span><span style="color:lime;">							      &gt;	    })
+</span>    return (total, average)					    return (total, average)
+
+
+def demonstrate_typing():					def demonstrate_typing():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of type hints in Python 3.		    Demonstrates the use of type hints in Python 3.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(52, True, {})
+</span>    numbers = [1, 2, 3, 4, 5]					    numbers = [1, 2, 3, 4, 5]
+<span style="color:lime;">							      &gt;	    save_workspace(52, False, {'numbers': numbers})
+</span><span style="color:lime;">							      &gt;	    save_workspace(53, True, {
+</span><span style="color:lime;">							      &gt;	        'sum_and_average': sum_and_average,
+</span><span style="color:lime;">							      &gt;	        'numbers': numbers
+</span><span style="color:lime;">							      &gt;	    })
+</span>    sum, average = sum_and_average(numbers)			    sum, average = sum_and_average(numbers)
+<span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        53, False, {
+</span><span style="color:lime;">							      &gt;	            'sum_and_average': sum_and_average,
+</span><span style="color:lime;">							      &gt;	            'sum': sum,
+</span><span style="color:lime;">							      &gt;	            'average': average,
+</span><span style="color:lime;">							      &gt;	            'numbers': numbers
+</span><span style="color:lime;">							      &gt;	        })
+</span><span style="color:lime;">							      &gt;	    save_workspace(56, True, {'sum': sum, 'print': print})
+</span>    print(f'Sum: {sum}')					    print(f'Sum: {sum}')
+<span style="color:lime;">							      &gt;	    save_workspace(56, False, {'sum': sum, 'print': print})
+</span><span style="color:lime;">							      &gt;	    save_workspace(57, True, {'print': print, 'average': aver
+</span>    print(f'Average: {average}')				    print(f'Average: {average}')
+<span style="color:lime;">							      &gt;	    save_workspace(57, False, {'print': print, 'average': ave
+</span>
+
+@lru_cache(maxsize=None)					@lru_cache(maxsize=None)
+def fibonacci(n: int) -&gt; int:					def fibonacci(n: int) -&gt; int:
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Calculates the nth Fibonacci number using memoization.	    Calculates the nth Fibonacci number using memoization.
+
+    Args:							    Args:
+        n: The index of the Fibonacci number to calculate.	        n: The index of the Fibonacci number to calculate.
+
+    Returns:							    Returns:
+        The nth Fibonacci number.				        The nth Fibonacci number.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    if n &lt;= 1:							    if n &lt;= 1:
+        return n						        return n
+    else:							    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)		        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+def demonstrate_lru_cache():					def demonstrate_lru_cache():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of LRU cache in Python 3.2.		    Demonstrates the use of LRU cache in Python 3.2.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    for i in range(10):						    for i in range(10):
+<span style="color:lime;">							      &gt;	        save_workspace(83, True, {
+</span><span style="color:lime;">							      &gt;	            'i': i,
+</span><span style="color:lime;">							      &gt;	            'fibonacci': fibonacci,
+</span><span style="color:lime;">							      &gt;	            'print': print
+</span><span style="color:lime;">							      &gt;	        })
+</span>        print(f'Fibonacci({i}): {fibonacci(i)}')		        print(f'Fibonacci({i}): {fibonacci(i)}')
+<span style="color:lime;">							      &gt;	        save_workspace(83, False, {
+</span><span style="color:lime;">							      &gt;	            'i': i,
+</span><span style="color:lime;">							      &gt;	            'fibonacci': fibonacci,
+</span><span style="color:lime;">							      &gt;	            'print': print
+</span><span style="color:lime;">							      &gt;	        })
+</span>
+
+async def count_to_ten():					async def count_to_ten():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Asynchronously counts from 1 to 10 with delays.		    Asynchronously counts from 1 to 10 with delays.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    for i in range(1, 11):					    for i in range(1, 11):
+<span style="color:lime;">							      &gt;	        save_workspace(90, True, {'i': i, 'print': print})
+</span>        print(f'Counting: {i}')					        print(f'Counting: {i}')
+<span style="color:lime;">							      &gt;	        save_workspace(90, False, {'i': i, 'print': print})
+</span><span style="color:lime;">							      &gt;	        save_workspace(91, True, {'sleep': sleep})
+</span>        sleep(1)						        sleep(1)
+<span style="color:lime;">							      &gt;	        save_workspace(91, False, {'sleep': sleep})
+</span>
+
+async def main():						async def main():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Main function to run the asynchronous task.			    Main function to run the asynchronous task.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    await count_to_ten()					    await count_to_ten()
+
+
+def demonstrate_async_await():					def demonstrate_async_await():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of async/await in Python 3.5.		    Demonstrates the use of async/await in Python 3.5.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(106, True, {'main': main, 'asyncio': async
+</span>    asyncio.run(main())						    asyncio.run(main())
+<span style="color:lime;">							      &gt;	    save_workspace(106, False, {'main': main, 'asyncio': asyn
+</span>
+
+def demonstrate_match_case():					def demonstrate_match_case():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of match-case in Python 3.10.		    Demonstrates the use of match-case in Python 3.10.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(114, True, {})
+</span>    value = 10							    value = 10
+<span style="color:lime;">							      &gt;	    save_workspace(114, False, {'value': value})
+</span>    match value:						    match value:
+        case 10:						        case 10:
+<span style="color:lime;">							      &gt;	            save_workspace(119, True, {'print': print})
+</span>            print('Value is 10')				            print('Value is 10')
+<span style="color:lime;">							      &gt;	            save_workspace(119, False, {'print': print})
+</span>        case 20:						        case 20:
+<span style="color:lime;">							      &gt;	            save_workspace(121, True, {'print': print})
+</span>            print('Value is 20')				            print('Value is 20')
+<span style="color:lime;">							      &gt;	            save_workspace(121, False, {'print': print})
+</span>        case _:							        case _:
+<span style="color:lime;">							      &gt;	            save_workspace(123, True, {'print': print})
+</span>            print('Value is not 10 or 20')			            print('Value is not 10 or 20')
+<span style="color:lime;">							      &gt;	            save_workspace(123, False, {'print': print})
+</span>
+
+def greet(name: str | int) -&gt; str:				def greet(name: str | int) -&gt; str:
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Greets the user with a personalized message.		    Greets the user with a personalized message.
+
+    Args:							    Args:
+        name: The name of the user.				        name: The name of the user.
+
+    Returns:							    Returns:
+        A greeting message.					        A greeting message.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    if isinstance(name, str):					    if isinstance(name, str):
+        return f'Hello, {name}!'				        return f'Hello, {name}!'
+    else:							    else:
+        return f'Hello, user {name}!'				        return f'Hello, user {name}!'
+
+
+def demonstrate_union_operator():				def demonstrate_union_operator():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of the union operator (|) in Python 	    Demonstrates the use of the union operator (|) in Python 
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(148, True, {'greet': greet, 'print': print
+</span>    print(greet('Alice'))					    print(greet('Alice'))
+<span style="color:lime;">							      &gt;	    save_workspace(148, False, {'greet': greet, 'print': prin
+</span><span style="color:lime;">							      &gt;	    save_workspace(149, True, {'greet': greet, 'print': print
+</span>    print(greet(123))						    print(greet(123))
+<span style="color:lime;">							      &gt;	    save_workspace(149, False, {'greet': greet, 'print': prin
+</span>
+
+def demonstrate_strict_float_parsing():				def demonstrate_strict_float_parsing():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of strict float parsing in Python 3.	    Demonstrates the use of strict float parsing in Python 3.
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    try:							    try:
+<span style="color:lime;">							      &gt;	        save_workspace(158, True, {'float': float})
+</span>        float('1.0e+5')						        float('1.0e+5')
+<span style="color:lime;">							      &gt;	        save_workspace(158, False, {'float': float})
+</span><span style="color:lime;">							      &gt;	        save_workspace(159, True, {'print': print})
+</span>        print('Strict float parsing successful')		        print('Strict float parsing successful')
+<span style="color:lime;">							      &gt;	        save_workspace(159, False, {'print': print})
+</span>    except ValueError:						    except ValueError:
+        print('Strict float parsing failed')			        print('Strict float parsing failed')
+
+
+def demonstrate_new_math_functions():				def demonstrate_new_math_functions():
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+    Demonstrates the use of new math functions in Python 3.11	    Demonstrates the use of new math functions in Python 3.11
+    &quot;&quot;&quot;								    &quot;&quot;&quot;
+<span style="color:lime;">							      &gt;	    save_workspace(169, True, {'math': math, 'print': print})
+</span>    print(f'math.cbrt(8): {math.cbrt(8)}')			    print(f'math.cbrt(8): {math.cbrt(8)}')
+<span style="color:lime;">							      &gt;	    save_workspace(169, False, {'math': math, 'print': print}
+</span><span style="color:lime;">							      &gt;	    save_workspace(170, True, {'math': math, 'print': print})
+</span>    print(f'math.dist([0, 0], [3, 4]): {math.dist([0, 0], [3,	    print(f'math.dist([0, 0], [3, 4]): {math.dist([0, 0], [3,
+<span style="color:lime;">							      &gt;	    save_workspace(170, False, {'math': math, 'print': print}
+</span>
+
+if __name__ == '__main__':					if __name__ == '__main__':
+<span style="color:lime;">							      &gt;	    save_workspace(173, True, {'demonstrate_typing': demonstr
+</span>    demonstrate_typing()					    demonstrate_typing()
+<span style="color:lime;">							      &gt;	    save_workspace(173, False, {'demonstrate_typing': demonst
+</span><span style="color:lime;">							      &gt;	    save_workspace(174, True, {'demonstrate_lru_cache': demon
+</span>    demonstrate_lru_cache()					    demonstrate_lru_cache()
+<span style="color:lime;">							      &gt;	    save_workspace(174, False,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_lru_cache': demonstrate_lru_
+</span><span style="color:lime;">							      &gt;	    save_workspace(175, True,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_async_await': demonstrate_as
+</span>    demonstrate_async_await()					    demonstrate_async_await()
+<span style="color:lime;">							      &gt;	    save_workspace(175, False,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_async_await': demonstrate_as
+</span><span style="color:lime;">							      &gt;	    save_workspace(176, True,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_match_case': demonstrate_mat
+</span>    demonstrate_match_case()					    demonstrate_match_case()
+<span style="color:lime;">							      &gt;	    save_workspace(176, False,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_match_case': demonstrate_mat
+</span><span style="color:lime;">							      &gt;	    save_workspace(177, True,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_union_operator': demonstrate
+</span>    demonstrate_union_operator()				    demonstrate_union_operator()
+<span style="color:lime;">							      &gt;	    save_workspace(177, False,
+</span><span style="color:lime;">							      &gt;	                   {'demonstrate_union_operator': demonstrate
+</span><span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        178, True,
+</span><span style="color:lime;">							      &gt;	        {'demonstrate_strict_float_parsing': demonstrate_stri
+</span>    demonstrate_strict_float_parsing()				    demonstrate_strict_float_parsing()
+<span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        178, False,
+</span><span style="color:lime;">							      &gt;	        {'demonstrate_strict_float_parsing': demonstrate_stri
+</span><span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        179, True,
+</span><span style="color:lime;">							      &gt;	        {'demonstrate_new_math_functions': demonstrate_new_ma
+</span>    demonstrate_new_math_functions()				    demonstrate_new_math_functions()
+<span style="color:lime;">							      &gt;	    save_workspace(
+</span><span style="color:lime;">							      &gt;	        179, False,
+</span><span style="color:lime;">							      &gt;	        {'demonstrate_new_math_functions': demonstrate_new_ma
+</span></pre>
+</body>
+</html>

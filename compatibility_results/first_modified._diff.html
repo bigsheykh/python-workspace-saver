@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+<span style="color:lime;">							      &gt;	import shelve
+</span><span style="color:lime;">							      &gt;	import os
+</span><span style="color:lime;">							      &gt;	import base64
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;	def save_workspace(line_number, is_before_line, dict_of_value
+</span><span style="color:lime;">							      &gt;	    os.makedirs('/tmp/python-workspace/', exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    dir_name = base64.b64encode(os.path.abspath(__file__).enc
+</span><span style="color:lime;">							      &gt;	    py_directory = '/tmp/python-workspace/' + dir_name
+</span><span style="color:lime;">							      &gt;	    os.makedirs(py_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    line_directory = py_directory + '/' + str(line_number)
+</span><span style="color:lime;">							      &gt;	    os.makedirs(line_directory, exist_ok=True)
+</span><span style="color:lime;">							      &gt;	    file_name = line_directory + '/' + str(is_before_line)
+</span><span style="color:lime;">							      &gt;	    my_shelf = shelve.open(file_name, 'n')
+</span><span style="color:lime;">							      &gt;	    for key in globals().keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = globals()[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('Error shelving:', key)
+</span><span style="color:lime;">							      &gt;	    for key in dict_of_values_to_save.keys():
+</span><span style="color:lime;">							      &gt;	        try:
+</span><span style="color:lime;">							      &gt;	            my_shelf[key] = dict_of_values_to_save[key]
+</span><span style="color:lime;">							      &gt;	        except TypeError:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	        except:
+</span><span style="color:lime;">							      &gt;	            print('TypeError shelving:', key)
+</span><span style="color:lime;">							      &gt;	    my_shelf.close()
+</span><span style="color:lime;">							      &gt;
+</span><span style="color:lime;">							      &gt;
+</span>import binascii							import binascii
+
+<span style="color:lime;">							      &gt;	save_workspace(9, True, {})
+</span>simple_string = 'SGVsbG8sIFB5dGh'				simple_string = 'SGVsbG8sIFB5dGh'
+<span style="color:lime;">							      &gt;	save_workspace(9, False, {'simple_string': simple_string})
+</span><span style="color:lime;">							      &gt;	save_workspace(12, True, {
+</span><span style="color:lime;">							      &gt;	    'binascii': binascii,
+</span><span style="color:lime;">							      &gt;	    'simple_string': simple_string
+</span><span style="color:lime;">							      &gt;	})
+</span>coded_bytes = binascii.b2a_hqx(simple_string.encode())		coded_bytes = binascii.b2a_hqx(simple_string.encode())
+<span style="color:lime;">							      &gt;	save_workspace(
+</span><span style="color:lime;">							      &gt;	    12, False, {
+</span><span style="color:lime;">							      &gt;	        'binascii': binascii,
+</span><span style="color:lime;">							      &gt;	        'coded_bytes': coded_bytes,
+</span><span style="color:lime;">							      &gt;	        'simple_string': simple_string
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	save_workspace(13, True, {'coded_bytes': coded_bytes, 'print'
+</span>print(coded_bytes)						print(coded_bytes)
+<span style="color:lime;">							      &gt;	save_workspace(13, False, {'coded_bytes': coded_bytes, 'print
+</span><span style="color:lime;">							      &gt;	save_workspace(16, True, {'binascii': binascii, 'coded_bytes'
+</span>decoded_bytes = binascii.a2b_hqx(coded_bytes)			decoded_bytes = binascii.a2b_hqx(coded_bytes)
+<span style="color:lime;">							      &gt;	save_workspace(
+</span><span style="color:lime;">							      &gt;	    16, False, {
+</span><span style="color:lime;">							      &gt;	        'binascii': binascii,
+</span><span style="color:lime;">							      &gt;	        'coded_bytes': coded_bytes,
+</span><span style="color:lime;">							      &gt;	        'decoded_bytes': decoded_bytes
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	save_workspace(17, True, {'decoded_bytes': decoded_bytes, 'pr
+</span>print(decoded_bytes)						print(decoded_bytes)
+<span style="color:lime;">							      &gt;	save_workspace(17, False, {'decoded_bytes': decoded_bytes, 'p
+</span><span style="color:lime;">							      &gt;	save_workspace(20, True, {'decoded_bytes': decoded_bytes})
+</span>decoded_string = decoded_bytes[0].decode()			decoded_string = decoded_bytes[0].decode()
+<span style="color:lime;">							      &gt;	save_workspace(20, False, {
+</span><span style="color:lime;">							      &gt;	    'decoded_string': decoded_string,
+</span><span style="color:lime;">							      &gt;	    'decoded_bytes': decoded_bytes
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(23, True, {'decoded_string': decoded_string, '
+</span>print('Decoded String:', decoded_string)			print('Decoded String:', decoded_string)
+<span style="color:lime;">							      &gt;	save_workspace(23, False, {'decoded_string': decoded_string, 
+</span><span style="color:lime;">							      &gt;	save_workspace(26, True, {})
+</span>a = 10								a = 10
+<span style="color:lime;">							      &gt;	save_workspace(26, False, {'a': a})
+</span><span style="color:lime;">							      &gt;	save_workspace(27, True, {})
+</span>b = 20								b = 20
+<span style="color:lime;">							      &gt;	save_workspace(27, False, {'b': b})
+</span><span style="color:lime;">							      &gt;	save_workspace(28, True, {'a': a, 'b': b})
+</span>c = a + b							c = a + b
+<span style="color:lime;">							      &gt;	save_workspace(28, False, {'a': a, 'c': c, 'b': b})
+</span><span style="color:lime;">							      &gt;	save_workspace(31, True, {'c': c, 'print': print})
+</span>print('Result of the calculation:', c)				print('Result of the calculation:', c)
+<span style="color:lime;">							      &gt;	save_workspace(31, False, {'c': c, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(34, True, {})
+</span>numbers = [1, 2, 3, 4, 5]					numbers = [1, 2, 3, 4, 5]
+<span style="color:lime;">							      &gt;	save_workspace(34, False, {'numbers': numbers})
+</span><span style="color:lime;">							      &gt;	save_workspace(37, True, {'sum': sum, 'numbers': numbers})
+</span>sum_of_numbers = sum(numbers)					sum_of_numbers = sum(numbers)
+<span style="color:lime;">							      &gt;	save_workspace(37, False, {
+</span><span style="color:lime;">							      &gt;	    'sum_of_numbers': sum_of_numbers,
+</span><span style="color:lime;">							      &gt;	    'numbers': numbers,
+</span><span style="color:lime;">							      &gt;	    'sum': sum
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(40, True, {'sum_of_numbers': sum_of_numbers, '
+</span>print('Sum of the numbers:', sum_of_numbers)			print('Sum of the numbers:', sum_of_numbers)
+<span style="color:lime;">							      &gt;	save_workspace(40, False, {'sum_of_numbers': sum_of_numbers, 
+</span><span style="color:lime;">							      &gt;	save_workspace(43, True, {})
+</span>fibonacci = [0, 1]						fibonacci = [0, 1]
+<span style="color:lime;">							      &gt;	save_workspace(43, False, {'fibonacci': fibonacci})
+</span><span style="color:lime;">							      &gt;	save_workspace(44, True, {})
+</span>limit = 10							limit = 10
+<span style="color:lime;">							      &gt;	save_workspace(44, False, {'limit': limit})
+</span>while len(fibonacci) &lt; limit:					while len(fibonacci) &lt; limit:
+<span style="color:lime;">							      &gt;	    save_workspace(47, True, {'fibonacci': fibonacci})
+</span>    next_number = fibonacci[-1] + fibonacci[-2]			    next_number = fibonacci[-1] + fibonacci[-2]
+<span style="color:lime;">							      &gt;	    save_workspace(47, False, {
+</span><span style="color:lime;">							      &gt;	        'next_number': next_number,
+</span><span style="color:lime;">							      &gt;	        'fibonacci': fibonacci
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	    save_workspace(48, True, {
+</span><span style="color:lime;">							      &gt;	        'next_number': next_number,
+</span><span style="color:lime;">							      &gt;	        'fibonacci': fibonacci
+</span><span style="color:lime;">							      &gt;	    })
+</span>    fibonacci.append(next_number)				    fibonacci.append(next_number)
+<span style="color:lime;">							      &gt;	    save_workspace(48, False, {
+</span><span style="color:lime;">							      &gt;	        'next_number': next_number,
+</span><span style="color:lime;">							      &gt;	        'fibonacci': fibonacci
+</span><span style="color:lime;">							      &gt;	    })
+</span><span style="color:lime;">							      &gt;	save_workspace(51, True, {'fibonacci': fibonacci, 'print': pr
+</span>print('Fibonacci sequence:', fibonacci)				print('Fibonacci sequence:', fibonacci)
+<span style="color:lime;">							      &gt;	save_workspace(51, False, {'fibonacci': fibonacci, 'print': p
+</span><span style="color:lime;">							      &gt;	save_workspace(54, True, {})
+</span>person = {'name': 'John', 'age': 30, 'city': 'New York'}	person = {'name': 'John', 'age': 30, 'city': 'New York'}
+<span style="color:lime;">							      &gt;	save_workspace(54, False, {'person': person})
+</span><span style="color:lime;">							      &gt;	save_workspace(61, True, {'person': person, 'print': print})
+</span>print('Person details:', person)				print('Person details:', person)
+<span style="color:lime;">							      &gt;	save_workspace(61, False, {'person': person, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(64, True, {})
+</span>text = 'Hello, World!'						text = 'Hello, World!'
+<span style="color:lime;">							      &gt;	save_workspace(64, False, {'text': text})
+</span>if text.startswith('Hello'):					if text.startswith('Hello'):
+<span style="color:lime;">							      &gt;	    save_workspace(68, True, {'print': print})
+</span>    print(&quot;The string starts with 'Hello'&quot;)			    print(&quot;The string starts with 'Hello'&quot;)
+<span style="color:lime;">							      &gt;	    save_workspace(68, False, {'print': print})
+</span>else:								else:
+<span style="color:lime;">							      &gt;	    save_workspace(70, True, {'print': print})
+</span>    print(&quot;The string does not start with 'Hello'&quot;)		    print(&quot;The string does not start with 'Hello'&quot;)
+<span style="color:lime;">							      &gt;	    save_workspace(70, False, {'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(73, True, {'text': text})
+</span>count = text.count('o')						count = text.count('o')
+<span style="color:lime;">							      &gt;	save_workspace(73, False, {'text': text, 'count': count})
+</span><span style="color:lime;">							      &gt;	save_workspace(76, True, {'count': count, 'print': print})
+</span>print(&quot;Count of 'o':&quot;, count)					print(&quot;Count of 'o':&quot;, count)
+<span style="color:lime;">							      &gt;	save_workspace(76, False, {'count': count, 'print': print})
+</span><span style="color:lime;">							      &gt;	save_workspace(79, True, {'a': a, 'c': c, 'b': b})
+</span>formatted_string = f'The sum of {a} and {b} is {c}'		formatted_string = f'The sum of {a} and {b} is {c}'
+<span style="color:lime;">							      &gt;	save_workspace(79, False, {
+</span><span style="color:lime;">							      &gt;	    'a': a,
+</span><span style="color:lime;">							      &gt;	    'c': c,
+</span><span style="color:lime;">							      &gt;	    'formatted_string': formatted_string,
+</span><span style="color:lime;">							      &gt;	    'b': b
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(82, True, {
+</span><span style="color:lime;">							      &gt;	    'formatted_string': formatted_string,
+</span><span style="color:lime;">							      &gt;	    'print': print
+</span><span style="color:lime;">							      &gt;	})
+</span>print('Formatted string:', formatted_string)			print('Formatted string:', formatted_string)
+<span style="color:lime;">							      &gt;	save_workspace(82, False, {
+</span><span style="color:lime;">							      &gt;	    'formatted_string': formatted_string,
+</span><span style="color:lime;">							      &gt;	    'print': print
+</span><span style="color:lime;">							      &gt;	})
+</span><span style="color:lime;">							      &gt;	save_workspace(85, True, {})
+</span>T = 'Hiya'							T = 'Hiya'
+<span style="color:lime;">							      &gt;	save_workspace(85, False, {'T': T})
+</span><span style="color:lime;">							      &gt;	save_workspace(86, True, {})
+</span>val = [1, 2, 3]							val = [1, 2, 3]
+<span style="color:lime;">							      &gt;	save_workspace(86, False, {'val': val})
+</span></pre>
+</body>
+</html>
