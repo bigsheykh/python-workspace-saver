@@ -17,3 +17,4 @@ mkdir -p $RESULTS_DIRECTORY
 
 ./python_pacakge_version_compatibility_test.sh 9 poe_ai_generated/scrapy_test.py compatibility_results/scipy_modified.py scrapy 1.7.4
 ./python_pacakge_version_compatibility_test.sh 9 poe_ai_generated/numpy_test.py compatibility_results/numpy_modified.py numpy 1.26.4
+./python_pandas_version_compatibility_test.sh 9 poe_ai_generated/pandas_test.py compatibility_results/pandas_modified.py pandas 1.5.3
