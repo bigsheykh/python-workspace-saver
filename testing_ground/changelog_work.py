@@ -36,6 +36,7 @@ def is_text_useful(txt: str) -> Tuple[bool, int]:
         and "selectively removed" not in txt
         and "removed by default" not in txt
         and "make sure" not in txt
+        and "removed unused" not in txt
     ):
         return (True, 2)
     if "will be fix" in txt or "when the fix" in txt or "promised a fix" in txt:

@@ -16,3 +16,4 @@ mkdir -p $RESULTS_DIRECTORY
 ./python_file_version_compatibility_test.sh 11 $TEST_FILES_DIRECTORY/sixth.py  $RESULTS_DIRECTORY/sixth_modified.py
 
 ./python_pacakge_version_compatibility_test.sh 9 poe_ai_generated/scrapy_test.py compatibility_results/scipy_modified.py scrapy 1.7.4
+./python_pacakge_version_compatibility_test.sh 9 poe_ai_generated/numpy_test.py compatibility_results/numpy_modified.py numpy 1.26.4

@@ -45,6 +45,15 @@ for i in $current_dir/changelog-info/$package_name/*; do
     package_version=$(basename "$i")
     echo $i
     echo $package_version
+    if [[ "$package_version" == *"1.2"* ]]; then
+        python_executable=~/ve9/bin/python
+    elif [[ "$package_version" == *"2.0."* ]]; then
+        python_executable=~/ve9/bin/python
+    elif [[ "$package_version" == *"1.14."* ]]; then
+        python_executable=~/ve6/bin/python
+    else
+        python_executable=~/ve7/bin/python
+    fi
     pip_not_worked=""
     $python_executable -m pip install "$package_name==$package_version" --prefer-binary -i https://mirrors.aliyun.com/pypi/simple/ || pip_not_worked="1"
     if [ ! -z "$pip_not_worked" ]; then
