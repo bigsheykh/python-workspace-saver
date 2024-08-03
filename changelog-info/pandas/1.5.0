@@ -1,0 +1,52 @@
+(3, 'allows adding customised footer rows to visualise additional calculations on the data,')
+
+(3, 'The argument ``group_keys`` has been added to the method :meth:`DataFrame.resample`.')
+
+(3, 'As with :meth:`DataFrame.groupby`, this argument controls the whether each group is added')
+
+(3, 'A new feature ``copy_on_write`` was added (:issue:`46958`). Copy on write ensures that')
+
+(3, '- :class:`.StringArray` now accepts array-likes containing nan-likes (``None``, ``np.nan``) for the ``values`` parameter in its constructor in addition to strings and :attr:`pandas.NA`. (:issue:`40839`)')
+
+(1, '- :meth:`DataFrame.rolling` and :meth:`Series.rolling` now support a ``step`` parameter with fixed-length windows (:issue:`15354`)')
+
+(1, '.. _whatsnew_150.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(1, '.. _whatsnew_150.notable_bug_fixes.groupby_transform_dropna:')
+
+(3, '    In [3]: # Should have one additional row with the value np.nan')
+
+(3, '    In [3]: # Should have one additional row with the value np.nan')
+
+(1, '.. _whatsnew_150.notable_bug_fixes.to_json_incorrectly_localizing_naive_timestamps:')
+
+(1, 'Note that this patch does not fix the localization of tz-aware Timestamps to UTC')
+
+(1, '.. _whatsnew_150.notable_bug_fixes.groupby_value_counts_categorical:')
+
+(3, ':meth:`Series.groupby` was ignored and the group keys would never be added to')
+
+(1, '   _ see also _whatsnew_130.notable_bug_fixes.setitem_column_try_inplace')
+
+(3, 'has been added in pandas 1.5:')
+
+(1, '.. _whatsnew_150.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug when adding a :class:`DateOffset` to a :class:`Series` would not add the ``nanoseconds`` field (:issue:`47856`)')
+
+(3, "- Bug in :meth:`Series.str.zfill` when strings contain leading signs, padding '0' before the sign character rather than after as ``str.zfill`` from standard library (:issue:`20868`)")
+
+(2, '- Bug in :class:`StataWriterUTF8` where some valid characters were removed from variable names (:issue:`47276`)')
+
+(3, '- Bug in adding ``np.timedelta64("NaT", "ns")`` to a :class:`Period` with a timedelta-like freq incorrectly raising ``IncompatibleFrequency`` instead of returning ``NaT`` (:issue:`47196`)')
+
+(3, '- Bug in adding an array of integers to an array with :class:`PeriodDtype` giving incorrect results when ``dtype.freq.n > 1`` (:issue:`47209`)')
+
+(1, '- Bug in :meth:`DataFrame.join` with a list when using suffixes to join DataFrames with duplicate column names (:issue:`46396`)')
+

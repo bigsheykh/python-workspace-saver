@@ -1,0 +1,44 @@
+(3, 'We added I/O support to read and render shallow versions of `XML`_ documents with')
+
+(1, '.. _whatsnew_130.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.categorical_unique_maintains_dtype:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.combine_first_preserves_dtype:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.groupby_preserves_dtype:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.groupby_reductions_float_result:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.setitem_column_try_inplace:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.setitem_never_inplace:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.setitem_with_bool_casting:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.rolling_groupby_column:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.rolling_var_precision:')
+
+(1, '.. _whatsnew_130.notable_bug_fixes.rolling_groupby_multiindex:')
+
+(2, '- :meth:`.Styler.from_custom_template` now has two new arguments for template names, and removed the old ``name``, due to template inheritance having been introducing for better parsing (:issue:`42053`). Subclassing modifications to Styler attributes are also needed.')
+
+(1, '- Deprecated :func:`merge` producing duplicated columns through the ``suffixes`` keyword  and already existing columns (:issue:`22818`)')
+
+(1, '.. _whatsnew_130.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(1, '- Bug in :func:`read_csv` interpreting ``NA`` value as comment, when ``NA`` does contain the comment string fixed for ``engine="python"`` (:issue:`34002`)')
+
+(3, '- Bug in :meth:`DataFrame.to_string` adding an extra dot and misaligning the truncation row when ``index=False`` (:issue:`40904`)')
+
+(1, '- Bug in :func:`read_csv` and :func:`read_table` silently ignoring ``prefix`` if ``names`` and ``prefix`` are defined, now raising a ``ValueError`` (:issue:`39123`)')
+
+(3, '- Bug in :meth:`.Styler.set_table_styles` where multiple elements in CSS-selectors of the ``table_styles`` argument were not correctly added (:issue:`34061`)')
+

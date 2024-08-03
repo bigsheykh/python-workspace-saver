@@ -1,0 +1,48 @@
+(1, 'In addition there are the usual large number of bug fixes and other improvements.')
+
+(2, '* The class ``PolyBase`` has been removed (deprecated in numpy 1.9.0). Please')
+
+(2, '  removed.')
+
+(2, 'The class ``PolyBase`` has been removed (deprecated in numpy 1.9.0). Please use')
+
+(2, 'removed from the `numpy.polynomial`.')
+
+(3, '``__array_ufunc__`` and additional positional arguments')
+
+(3, '``where`` array in a reduction such as ``np.add.reduce``.')
+
+(2, '``/usr/include`` removed from default include paths')
+
+(3, 'longer include ``/usr/include``. This path is normally added by the compiler,')
+
+(3, 'which are also valid for reduction such as ``np.add.reduce``')
+
+(3, '    np.add(3, 5, dtype=">i32")')
+
+(3, '    np.add(arr, arr, dtype="m8[ns]")')
+
+(3, '    np.add(3, 5, dtype="m8[ns]")   Now return generic time units')
+
+(3, 'NumPy distutils will now always add the ``-ffp-exception-behavior=strict``')
+
+(3, 'To enable the plugin, one must add it to their mypy `configuration file`_:')
+
+(3, 'To enable the plugin, one must add it to their mypy `configuration file`_:')
+
+(3, 'A new ``min_digits`` argument has been added to the dragon4 float printing')
+
+(1, 'fixed precision mode, it has no effect and the precision argument fixes the')
+
+(3, 'If ``NPY_CBLAS_LIBS`` is set (optional in addition to ``NPY_BLAS_LIBS``), this')
+
+(3, 'A runtime-subcriptable alias has been added for ``ndarray``')
+
+(3, '``numpy.typing.NDArray`` has been added, a runtime-subscriptable alias for')
+
+(3, 'option on macOS.  If additional issues are found, please file a bug report')
+
+(3, '(https://developer.apple.com/bug-reporting/). We intend to address issues')
+
+(3, '    b9205711e5440954f861ceeea8f1b415d7dd15214add2e878b4d1cf2bcb1a914  numpy-1.21.0-cp38-cp38-manylinux_2_17_aarch64.manylinux2014_aarch64.whl')
+

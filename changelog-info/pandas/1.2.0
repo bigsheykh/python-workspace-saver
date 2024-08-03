@@ -1,0 +1,42 @@
+(3, ':issue:`35655` added fsspec support (including ``storage_options``)')
+
+(3, 'The keyword ``position`` has been added to set the position.')
+
+(3, 'to add a short caption macro.')
+
+(3, "We've added :class:`Float32Dtype` / :class:`Float64Dtype` and :class:`~arrays.FloatingArray`.")
+
+(3, '- :class:`.Styler` now allows direct CSS class name addition to individual data cells (:issue:`36159`)')
+
+(1, '- :class:`.Rolling` now supports the ``closed`` argument for fixed windows (:issue:`34315`)')
+
+(1, '.. _whatsnew_120.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(3, '- The default value of ``regex`` for :meth:`Series.str.replace` will change from ``True`` to ``False`` in a future release. In addition, single character regular expressions will *not* be treated as literal strings when ``regex=True`` is set (:issue:`24804`)')
+
+(1, '- Small performance decrease to :meth:`.Rolling.min` and :meth:`.Rolling.max` for fixed windows (:issue:`36567`)')
+
+(1, '.. _whatsnew_120.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug in adding a :class:`.BusinessDay` with nonzero ``offset`` to a non-scalar other (:issue:`37457`)')
+
+(3, '- Bug in :meth:`Series.to_string`, :meth:`DataFrame.to_string`, and :meth:`DataFrame.to_latex` adding a leading space when ``index=False`` (:issue:`24980`)')
+
+(1, '- Bug in :meth:`read_parquet` with fixed offset time zones. String representation of time zones was not recognized (:issue:`35997`, :issue:`36004`)')
+
+(1, '- Bug in :class:`HDFStore` threw a ``TypeError`` when exporting an empty DataFrame with ``datetime64[ns, tz]`` dtypes with a fixed HDF5 store (:issue:`20594`)')
+
+(1, '- Bug in :class:`HDFStore` was dropping time zone information when exporting a Series with ``datetime64[ns, tz]`` dtypes with a fixed HDF5 store (:issue:`20594`)')
+
+(2, '- Bumped minimum xarray version to 0.12.3 to avoid reference to the removed ``Panel`` class (:issue:`27101`, :issue:`37983`)')
+
+(1, '- Bug in :meth:`DataFrame.plot.bar` and :meth:`Series.plot.bar` where ticks positions were assigned by value order instead of using the actual value for numeric or a smart ordering for string (:issue:`26186`, :issue:`11465`). This fix has been reverted in pandas 1.2.1, see :doc:`v1.2.1`')
+
+(1, '  indexed by a :class:`.TimedeltaIndex` with a fixed frequency and the x-axis lower limit was greater than the upper limit (:issue:`37454`)')
+

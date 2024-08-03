@@ -1,0 +1,6 @@
+(1, 'enhancements along with a large number of bug fixes. New features include')
+
+(2, '- Deprecated ``day_of_year`` API removed from PeriodIndex, use ``dayofyear``')
+
+(2, '- Legacy cruft removed: pandas.stats.misc.quantileTS')
+

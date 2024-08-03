@@ -1,0 +1,10 @@
+(2, '    had not :ref:`already been removed in 2.4.0 <2.4-deprecation-removals>`.')
+
+(1, 'Bug fixes')
+
+(3, '-   Fixed installation on PyPy installing PyDispatcher in addition to')
+
+(3, '-   Logging documentation now includes :ref:`additional ways to filter logs')
+
+(1, '-   Implemented code refactorings, style fixes and cleanups.')
+

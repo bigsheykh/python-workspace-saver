@@ -1,0 +1,34 @@
+(3, '  processes has been added. The currently available bit generators are `MT19937')
+
+(3, 'produce the deprecation warning. To help alleviate confusion, an additional')
+
+(2, 'non-functional. This code was removed. If needed, use')
+
+(1, 'from a structured dtype to a regular one.  This has been fixed, making it')
+
+(1, 'writeable was never allowed. This has now been fixed.')
+
+(1, '    npy_intp const fixed_dims[] = {1, 2, 3};')
+
+(1, '    npy_intp size = PyArray_MultiplyList(fixed_dims, 3);')
+
+(3, 'added. The currently available :ref:`Bit Generators <bit_generator>` are')
+
+(3, 'available bits add zero padding. Negative counts trim bits off the end instead')
+
+(3, 'These functions now accept a ``hermitian`` argument, matching the one added')
+
+(3, '"max relative difference," in addition to the previous "mismatch" percentage.')
+
+(3, 'Swarztrauber), but pocketfft contains additional modifications which improve')
+
+(3, 'A new `numpy.ctypeslib.as_ctypes_type` function has been added, which can be')
+
+(3, 'a preallocated array with the desired padded shape instead of using')
+
+(3, 'New keywords added to `nan_to_num`')
+
+(2, '``nan`` value, the warning is redundant and has been removed.')
+
+(3, '* Padding ``max < min`` has changed to be more consistent across dtypes, but')
+

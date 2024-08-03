@@ -1,0 +1,22 @@
+(1, 'This 1.1 release brings a lot of interesting features and bug fixes:')
+
+(3, '  - HTTP caching now follows RFC2616 more closely, added settings')
+
+(1, '- These bug fixes may require your attention:')
+
+(3, '    If you need the old behavior, add ``400`` to :setting:`RETRY_HTTP_CODES`.')
+
+(1, 'Keep reading for more details on other improvements and bug fixes.')
+
+(1, '- Tons of documentation updates and related fixes (:issue:`1291`, :issue:`1302`,')
+
+(2, '- The ``optional_features`` set has been removed (:issue:`1359`).')
+
+(2, '- The ``--lsprof`` command line option has been removed (:issue:`1689`).')
+
+(1, 'Bugfixes')
+
+(1, '- Various ``FormRequest`` fixes (:issue:`1595`, :issue:`1596`, :issue:`1597`).')
+
+(1, '- Various logging related fixes (:issue:`1294`, :issue:`1419`, :issue:`1263`,')
+

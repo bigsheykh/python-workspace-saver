@@ -1,0 +1,2 @@
+(3, '- added ``handles_request()`` class method to ``BaseSpider``')
+

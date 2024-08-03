@@ -1,0 +1,10 @@
+(2, '- Pylinted, pep8 and removed old-style exceptions from source (:issue:`430`, :issue:`432`)')
+
+(1, '- Bugfix crawling shutdown on SIGINT (:issue:`450`)')
+
+(1, 'Bugfixes')
+
+(1, '- Lot of bugfixes to retry middleware under disconnections using HTTP 1.1 download handler')
+
+(3, '- Document ``bindaddress`` request meta (:commit:`37c24e01d7`)')
+

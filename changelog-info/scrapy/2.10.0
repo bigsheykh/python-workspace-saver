@@ -1,0 +1,22 @@
+(3, '-   The new add-ons framework simplifies configuring 3rd-party components that')
+
+(1, '-   Many fixes and improvements for feed exports.')
+
+(1, '    even when this setting was ``False`` (which was a bug that is now fixed), ')
+
+(2, '-   The ``scrapy.utils.reqser`` module, deprecated in Scrapy 2.6, is removed.')
+
+(2, '    Scrapy 2.6, are removed. (:issue:`5994`, :issue:`5996`)')
+
+(2, '    deprecated in Scrapy 2.6, are removed. (:issue:`5994`, :issue:`5998`)')
+
+(3, '-   Added support for :ref:`Scrapy add-ons <topics-addons>`. (:issue:`5950`)')
+
+(1, 'Bug fixes')
+
+(3, '-   Fixed an error when a component added by the class object throws')
+
+(1, '    for :class:`~scrapy.utils.datatypes.CaselessDict` that fixes some API')
+
+(3, '-   Added examples of making additional requests in callbacks. (:issue:`5927`)')
+

@@ -1,0 +1,28 @@
+(1, 'This is a maintenance release, with minor features, bug fixes, and cleanups.')
+
+(2, '    been removed. Use the :meth:`~io.BufferedIOBase.read1` method of')
+
+(2, '    2.0, has now been removed. Use :func:`scrapy.utils.python.to_unicode`')
+
+(2, '    2.0, has now been removed. Use')
+
+(2, '    in Scrapy 2.0, has now been removed. Use')
+
+(1, '-   Support for using environment variables prefixed with ``SCRAPY_`` to')
+
+(2, '    override settings, deprecated in Scrapy 2.0, has now been removed.')
+
+(2, '    deprecated in Scrapy 2.0, has now been removed. We expect proxies that used')
+
+(2, '    2.3, has now been removed.')
+
+(2, '    has now been removed.')
+
+(2, '    has now been removed.')
+
+(1, 'Bug fixes')
+
+(1, '-   Enabled unsafe legacy SSL renegotiation to fix access to some outdated')
+
+(3, '    (``cb_kwargs``) added to a request in the ``process_request`` callback of a')
+

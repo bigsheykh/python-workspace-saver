@@ -1,0 +1,18 @@
+(3, 'The :meth:`DataFrame.map` been added and :meth:`DataFrame.applymap` has been deprecated. :meth:`DataFrame.map` has the same functionality as :meth:`DataFrame.applymap`, but the new name better communicates that this is the :class:`DataFrame` version of :meth:`Series.map` (:issue:`52353`).')
+
+(2, '1. The previous implementation would unnecessarily introduce NA values into the result. The user could have NA values automatically removed by passing ``dropna=True`` (the default), but doing this could also remove NA values from the result that existed in the input. See the examples below.')
+
+(3, '- :meth:`pandas.read_html` now supports the ``storage_options`` keyword when used with a URL, allowing users to add headers to the outbound HTTP request (:issue:`49944`)')
+
+(3, '- Classes that are useful for type-hinting have been added to the public API in the new submodule ``pandas.api.typing`` (:issue:`48577`)')
+
+(3, '- Performance improvement in :meth:`Series.add` for PyArrow string and binary dtypes (:issue:`53150`)')
+
+(1, '.. _whatsnew_210.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(2, '- Bug in :func:`read_html` where tail texts were removed together with elements containing ``display:none`` style (:issue:`51629`)')
+
+(1, '- Bug in :meth:`DataFrame.resample` and :meth:`Series.resample` in incorrectly allowing non-fixed ``freq`` when resampling on a :class:`TimedeltaIndex` (:issue:`51896`)')
+

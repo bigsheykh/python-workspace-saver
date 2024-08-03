@@ -1,0 +1,6 @@
+(3, 'Support for the upcoming Python 3.11 has been added.')
+
+(1, 'Bug fixes')
+
+(3, '    has also been added (:issue:`4978`).')
+

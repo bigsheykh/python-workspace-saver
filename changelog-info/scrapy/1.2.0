@@ -1,0 +1,10 @@
+(1, 'Bug fixes')
+
+(1, '  though we consider this a bug fix.')
+
+(1, '  backward incompatible**, though we consider this a bug fix.')
+
+(1, '- Grammar fixes: :issue:`2128`, :issue:`1566`.')
+
+(2, '- Download stats badge removed from README (:issue:`2160`).')
+

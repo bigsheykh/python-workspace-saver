@@ -1,0 +1,56 @@
+(2, 'version 1.4 and have now been removed. Instead :class:`Index` should be used directly, and')
+
+(3, '  was added to the methods listed in')
+
+(1, '- :meth:`Series.add_suffix`, :meth:`DataFrame.add_suffix`, :meth:`Series.add_prefix` and :meth:`DataFrame.add_prefix` support an ``axis`` argument. If ``axis`` is set, the default behaviour of which axis to consider can be overwritten (:issue:`47819`)')
+
+(3, '- Fix ``test`` optional_extra by adding missing test package ``pytest-asyncio`` (:issue:`48361`)')
+
+(1, '.. _whatsnew_200.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(1, '.. _whatsnew_200.notable_bug_fixes.cumsum_cumprod_overflow:')
+
+(1, '.. _whatsnew_200.notable_bug_fixes.groupby_nth_filter:')
+
+(3, 'support is added for "datetime64[s]", "datetime64[ms]", and "datetime64[us]" dtypes,')
+
+(1, 'UTC and fixed-offset timezones default to standard-library tzinfo objects')
+
+(1, 'Similarly, for timezones represent fixed UTC offsets, we use ``datetime.timezone``')
+
+(1, 'For timezones that are neither UTC nor fixed offsets, e.g. "US/Pacific", we')
+
+(2, 'The arguments signature is similar, albeit ``col_space`` has been removed since')
+
+(2, 'The pandas latex options below are no longer used and have been removed. The generic')
+
+(2, '    keywords would be deprecated in the next release of pandas and removed in pandas 3.0.')
+
+(2, '- Removed deprecated :class:`CategoricalBlock`, :meth:`Block.is_categorical`, require datetime64 and timedelta64 values to be wrapped in :class:`DatetimeArray` or :class:`TimedeltaArray` before passing to :meth:`Block.make_block_same_class`, require ``DatetimeTZBlock.values`` to have the correct ndim when passing to the :class:`BlockManager` constructor, and removed the "fastpath" keyword from the :class:`SingleBlockManager` constructor (:issue:`40226`, :issue:`40571`)')
+
+(1, '- Removed arguments ``prefix``, ``squeeze``, ``error_bad_lines`` and ``warn_bad_lines`` from :func:`read_csv` (:issue:`40413`, :issue:`43427`)')
+
+(1, '- Enforced disallowing ``dict`` or ``set`` objects in ``suffixes`` in :func:`merge` (:issue:`34810`)')
+
+(1, '- Enforced disallowing :func:`merge` to produce duplicated columns through the ``suffixes`` keyword and already existing columns (:issue:`22818`)')
+
+(3, '- Removed argument ``inplace`` from :meth:`Categorical.add_categories`, :meth:`Categorical.remove_categories`, :meth:`Categorical.set_categories`, :meth:`Categorical.rename_categories`, :meth:`Categorical.reorder_categories`, :meth:`Categorical.set_ordered`, :meth:`Categorical.as_ordered`, :meth:`Categorical.as_unordered` (:issue:`37981`, :issue:`41118`, :issue:`41133`, :issue:`47834`)')
+
+(1, '.. _whatsnew_200.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug in :func:`to_datetime` was throwing ``ValueError`` when parsing dates with ISO8601 format where some values were not zero-padded (:issue:`21422`)')
+
+(3, '- Bug in :meth:`DataFrame.add` cannot apply ufunc when inputs contain mixed DataFrame type and Series type (:issue:`39853`)')
+
+(3, '- Bug in :meth:`Series.__add__` casting to object for list and masked :class:`Series` (:issue:`22962`)')
+
+(3, '- Bug in adding a :class:`Period` object to an array of :class:`DateOffset` objects incorrectly raising ``TypeError`` (:issue:`50162`)')
+
+(3, "- ``ax.set_xlim`` was sometimes raising ``UserWarning`` which users couldn't address due to ``set_xlim`` not accepting parsing arguments - the converter now uses :func:`Timestamp` instead (:issue:`49148`)")
+

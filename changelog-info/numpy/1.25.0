@@ -1,0 +1,40 @@
+(2, '* ``np.core.machar`` and ``np.finfo.machar`` have been removed.')
+
+(2, '* The ``np.dual`` submodule has been removed.')
+
+(2, '* Nose support has been removed. NumPy switched to using pytest in 2018 and nose')
+
+(2, '  *Decorators removed*:')
+
+(2, '  *Functions removed*:')
+
+(2, '* The ``numpy.testing.utils`` shim has been removed.  Importing from the')
+
+(2, '  been removed. All imports should be made directly from ``numpy.testing``.')
+
+(2, '* The environment variable to disable dispatching has been removed.')
+
+(2, '  been removed. This variable disabled dispatching with ``__array_function__``.')
+
+(2, '* Support for ``y=`` as an alias of ``out=`` has been removed.')
+
+(3, 'different results when the padding size is larger than initial array.')
+
+(3, 'strict multiples of original data even if the padding size is larger than the')
+
+(2, 'Cython ``long_t`` and ``ulong_t`` removed')
+
+(3, 'The main reason for this is to increase discoverability and add')
+
+(3, 'Support for Fujitsu compiler has been added.')
+
+(3, 'Support for SSL2 has been added. SSL2 is a library that provides OpenBLAS')
+
+(3, 'These have now been added.')
+
+(3, 'fields is constant. Prior, padding between the fields or a reversed field')
+
+(3, 'conditions, ``ufunc.at`` can be up to 60x faster (an additional 7x speedup).')
+
+(3, 'Appropriate indexed loops have been added to ``add``, ``subtract``,')
+

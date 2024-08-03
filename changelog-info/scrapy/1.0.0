@@ -1,0 +1,24 @@
+(1, 'You will find a lot of new features and bugfixes in this major release.  Make')
+
+(1, '- support namespace prefix in xmliter_lxml (:issue:`963`)')
+
+(3, '- add gzip compression to filesystem http cache backend (:issue:`1020`)')
+
+(3, '- add signal to be sent when request is dropped by the scheduler')
+
+(1, '- Deleted bin folder from root, fixes 913 (:issue:`914`)')
+
+(1, '- Corrections & Sphinx related fixes (:issue:`1220`, :issue:`1219`,')
+
+(1, 'Bugfixes')
+
+(1, '- Item multi inheritance fix (:issue:`353`, :issue:`1228`)')
+
+(1, '- fix dont_merge_cookies bad behaviour when set to false on meta')
+
+(1, '- fix Python 3 syntax errors in ajaxcrawl.py (:issue:`1162`)')
+
+(1, '- PY3: fix xmlrpclib and email imports (:issue:`801`)')
+
+(1, '- PY3: fix has_key and use six.moves.configparser (:issue:`798`)')
+

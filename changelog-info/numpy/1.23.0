@@ -1,0 +1,36 @@
+(3, '* ``numpy.from_dlpack`` has been added to allow easy exchange of data using the')
+
+(2, '  demonstration of its use in tool/allocation_tracking has been removed.  The')
+
+(2, '  removed as part of the continued removal of Python 2 compatibility. This')
+
+(2, '* The ``alen`` and ``asscalar`` functions have been removed.')
+
+(2, '* The ``UPDATEIFCOPY`` array flag has been removed together with the enum')
+
+(2, '  ``PyArray_XDECREF_ERR`` was also removed. These were all deprecated in 1.14. They')
+
+(3, 'definitions in a module. They are added in the ``body`` list of the')
+
+(3, 'New parameter ``ndmin`` added to ``genfromtxt``')
+
+(3, '``numpy.loadtxt`` now supports an additional ``quotechar`` keyword argument')
+
+(3, 'The parameter ``keepdims`` was added to the functions ``numpy.average``')
+
+(3, 'New parameter ``equal_nan`` added to ``np.unique``')
+
+(3, 'padding is ignored.')
+
+(2, 'contiguously and padding is removed.')
+
+(3, '``offsets`` and ``itemsize`` unless the structure includes padding not')
+
+(3, '  is allowed to differ due to padding.')
+
+(2, '``NPY_RELAXED_STRIDES_CHECKING`` has been removed')
+
+(1, 'The row counting of ``numpy.loadtxt`` was fixed.  ``loadtxt`` ignores fully')
+
+(3, 'Reduction operations like ``numpy.sum``, ``numpy.prod``, ``numpy.add.reduce``,')
+

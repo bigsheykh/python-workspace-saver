@@ -1,0 +1,24 @@
+(1, '*   :ref:`Security fixes for cookie handling <2.6-security-fixes>`')
+
+(1, '.. _2.6-security-fixes:')
+
+(1, 'Security bug fixes')
+
+(1, '              different domains with a shared domain suffix (e.g.')
+
+(1, '              suffix (e.g. ``example.com``) as the cookie domain when defining')
+
+(1, '    to a `public suffix <https://publicsuffix.org/>`_, the cookie is now')
+
+(2, '    now been removed. (:issue:`5393`)')
+
+(2, '-   ``scrapy.item.BaseItem``, deprecated in Scrapy 2.2, has now been removed.')
+
+(2, '-   ``scrapy.item.DictItem``, deprecated in Scrapy 1.8, has now been removed.')
+
+(2, '    been removed. (:issue:`4178`, :issue:`4356`)')
+
+(1, 'Bug fixes')
+
+(1, '-   Improved tests, fixed CI issues, removed unused code. (:issue:`5094`,')
+

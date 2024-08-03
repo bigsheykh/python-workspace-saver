@@ -1,0 +1,22 @@
+(1, 'linked with OpenBLAS v0.3.0, which should fix some of the linalg problems')
+
+(3, '  have been added to deal with compiler optimization changing the order of')
+
+(3, 'Previously numpy added ``__array_interface__`` attributes to all the integer')
+
+(1, 'the old behavior has been fixed and the old behavior restored.')
+
+(3, 'have been added and should be used in place of the ``npy_get_floatstatus``and')
+
+(3, '  have been added and should be used in place of the ``npy_get_floatstatus``and')
+
+(3, '``np.gcd`` and ``np.lcm`` ufuncs added for integer and objects types')
+
+(3, 'The build system has been modified to add support for the')
+
+(3, '``return_indices`` keyword added for ``np.intersect1d``')
+
+(1, 'full list of issues fixed are:')
+
+(3, 'is added before the accumulated result is stored in its place, hence the')
+

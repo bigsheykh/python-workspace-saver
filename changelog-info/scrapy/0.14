@@ -1,0 +1,14 @@
+(3, '- added ``-o`` option to ``scrapy crawl``, a shortcut for dumping scraped items into a file (or standard output using ``-``)')
+
+(3, '- Improved encoding detection by adding support for HTML5 meta charset declaration (:rev:`2690`)')
+
+(3, '- ``CsvItemExporter``: added ``join_multivalued`` parameter (:rev:`2578`)')
+
+(2, 'Code rearranged and removed')
+
+(2, '   - original item_scraped signal was removed')
+
+(2, '   - old log lines ``Scraped Item...`` were removed')
+
+(2, '- removed ``CONCURRENT_SPIDERS`` setting (use scrapyd maxproc instead) (:rev:`2789`)')
+

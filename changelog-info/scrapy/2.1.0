@@ -1,0 +1,18 @@
+(3, '* New :attr:`Response.ip_address <scrapy.http.Response.ip_address>` attribute')
+
+(2, '    middleware has been removed, including the entire')
+
+(2, '*   The ``spiders`` property has been removed from')
+
+(2, '    classes have been removed from :mod:`scrapy.utils.datatypes`')
+
+(3, '*   The new :attr:`Response.ip_address <scrapy.http.Response.ip_address>`')
+
+(3, '    attribute gives access to the IP address that originated a response')
+
+(1, 'Bug fixes')
+
+(2, '*   Removed warnings about using old, removed settings (:issue:`4404`)')
+
+(3, '*   Removed code that added support for old versions of Twisted that we no')
+

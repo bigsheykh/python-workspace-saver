@@ -1,0 +1,76 @@
+(3, "We've added :meth:`DataFrame.compare` and :meth:`Series.compare` for comparing two ``DataFrame`` or two ``Series`` (:issue:`30429`)")
+
+(3, "With :ref:`groupby <groupby.dropna>` , we've added a ``dropna`` keyword to :meth:`DataFrame.groupby` and :meth:`Series.groupby` in order to")
+
+(3, "We've added a ``key`` argument to the :class:`DataFrame` and :class:`Series` sorting methods, including")
+
+(1, 'The bins of the grouping are adjusted based on the beginning of the day of the time series starting point. This works well with frequencies that are multiples of a day (like ``30D``) or that divides a day (like ``90s`` or ``1min``). But it can create inconsistencies with some frequencies that do not meet this criteria. To change this behavior you can now specify a fixed timestamp with the argument ``origin``.')
+
+(3, '- ``loffset`` should be replaced by directly adding an offset to the index :class:`DataFrame` after being resampled.')
+
+(1, 'Resample using a fixed origin:')
+
+(3, 'If needed you can adjust the bins with the argument ``offset`` (a :class:`Timedelta`) that would be added to the default ``origin``.')
+
+(3, 'functionality for S3 and GCS storage, which were already supported, but also add')
+
+(1, '- Added a :func:`pandas.api.indexers.VariableOffsetWindowIndexer` class to support ``rolling`` operations with non-fixed offsets (:issue:`34994`)')
+
+(3, '- The :meth:`DataFrame.to_feather` method now supports additional keyword')
+
+(3, '  arguments (e.g. to set the compression) that are added in pyarrow 0.17')
+
+(3, '  dictionary containing both the method and any additional arguments that are passed to the')
+
+(3, '  compression library. Compression was also added to the low-level Stata-file writers')
+
+(1, '.. _whatsnew_110.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(3, "This restores the behavior of :meth:`MultiIndex.get_indexer` with ``method='backfill'`` or ``method='pad'`` to the behavior before pandas 0.23.0. In particular, MultiIndexes are treated as a list of tuples and padding or backfilling is done with respect to the ordering of these lists of tuples (:issue:`29896`).")
+
+(1, '.. _whatsnew_110.notable_bug_fixes.indexing_raises_key_errors:')
+
+(1, '.. _whatsnew_110.notable_bug_fixes.indexing_int_multiindex_raises_key_errors:')
+
+(1, '.. _whatsnew_110.notable_bug_fixes.assignment_to_multiple_columns:')
+
+(1, '.. _whatsnew_110.notable_bug_fixes.groupby_consistency:')
+
+(1, '.. _whatsnew_110.notable_bug_fixes.apply_applymap_first_once:')
+
+(3, 'The ``check_freq`` argument was added to :func:`testing.assert_frame_equal` and :func:`testing.assert_series_equal` in pandas 1.1.0 and defaults to ``True``. :func:`testing.assert_frame_equal` and :func:`testing.assert_series_equal` now raise ``AssertionError`` if the indexes do not have the same frequency. Before pandas 1.1.0, the index frequency was not checked.')
+
+(1, '- The minimum version of Cython is now the most recent bug-fix version (0.29.16) (:issue:`33334`).')
+
+(1, '- Providing ``suffixes`` as a ``set`` in :func:`pandas.merge` is deprecated. Provide a tuple instead (:issue:`33740`, :issue:`34741`).')
+
+(3, '- Performance improvement in arithmetic operations (``sub``, ``add``, ``mul``, ``div``) for :class:`MultiIndex` (:issue:`34297`)')
+
+(3, '- Significant performance improvement of :meth:`io.formats.style.Styler.render` with styles added with various ways such as :meth:`io.formats.style.Styler.apply`, :meth:`io.formats.style.Styler.applymap` or :meth:`io.formats.style.Styler.bar` (:issue:`19917`)')
+
+(1, '.. _whatsnew_110.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug in :class:`Timestamp` arithmetic when adding or subtracting an ``np.ndarray`` with ``timedelta64`` dtype (:issue:`33296`)')
+
+(3, '- Bug in :class:`DatetimeIndex` addition and subtraction with some types of :class:`DateOffset` objects incorrectly retaining an invalid ``freq`` attribute (:issue:`33779`)')
+
+(3, '- Bug in :class:`DataFrame` and :class:`Series` addition and subtraction between object-dtype objects and ``datetime64`` dtype objects (:issue:`33824`)')
+
+(3, '- Bug in :class:`Interval` where a :class:`Timedelta` could not be added or subtracted from a :class:`Timestamp` interval (:issue:`32023`)')
+
+(1, '- :func:`read_csv` will now raise a ``ValueError`` when the arguments ``header`` and ``prefix`` both are not ``None``. (:issue:`27394`)')
+
+(1, '- Bug in :class:`HDFStore` that caused it to set to ``int64`` the dtype of a ``datetime64`` column when reading a :class:`DataFrame` in Python 3 from fixed format written in Python 2 (:issue:`31750`)')
+
+(3, '- Bug in :meth:`DataFrame.plot.scatter` that when adding multiple plots with different ``cmap``, colorbars always use the first ``cmap`` (:issue:`33389`)')
+
+(3, '- Bug in :meth:`DataFrame.plot.scatter` was adding a colorbar to the plot even if the argument ``c`` was assigned to a column containing color names (:issue:`34316`)')
+
+(3, '- Bug on inplace operation of a :class:`Series` that was adding a column to the :class:`DataFrame` from where it was originally dropped from (using ``inplace=True``) (:issue:`30484`)')
+

@@ -1,0 +1,208 @@
+(3, 'addition to these release notes, include:')
+
+(1, '  - `numpy.char` fixed-length string operations have been accelerated by')
+
+(1, '    addition to the fixed-length string dtypes,')
+
+(2, '  - Many outdated functions and macros removed, and private internals hidden to')
+
+(1, '    50 <NEP50>`_. This fixes many user surprises about promotions which')
+
+(1, '   Note that there is a ``ruff`` mode to auto-fix many things in Python code.')
+
+(2, '  ``extobj=`` have been removed.  The preferred replacement for all of these')
+
+(2, '* ``np.cast`` has been removed. The literal replacement for')
+
+(2, '* ``np.source`` has been removed. The preferred replacement is')
+
+(2, '* ``np.lookfor`` has been removed.')
+
+(2, '* ``numpy.who`` has been removed. As an alternative for the removed functionality, one')
+
+(2, '* Multiple niche enums, expired members and functions have been removed from')
+
+(2, '  As a result, these main namespace members got removed: ``np.FLOATING_POINT_SUPPORT``,')
+
+(3, '  ``np.MAY_SHARE_BOUNDS``, ``add_newdoc``, ``np.add_docstring`` and')
+
+(3, '  ``np.add_newdoc_ufunc``.')
+
+(2, '* Alias ``np.float_`` has been removed. Use ``np.float64`` instead.')
+
+(2, '* Alias ``np.complex_`` has been removed. Use ``np.complex128`` instead.')
+
+(2, '* Alias ``np.longfloat`` has been removed. Use ``np.longdouble`` instead.')
+
+(2, '* Alias ``np.singlecomplex`` has been removed. Use ``np.complex64`` instead.')
+
+(2, '* Alias ``np.cfloat`` has been removed. Use ``np.complex128`` instead.')
+
+(2, '* Alias ``np.longcomplex`` has been removed. Use ``np.clongdouble`` instead.')
+
+(2, '* Alias ``np.clongfloat`` has been removed. Use ``np.clongdouble`` instead.')
+
+(2, '* Alias ``np.string_`` has been removed. Use ``np.bytes_`` instead.')
+
+(2, '* Alias ``np.unicode_`` has been removed. Use ``np.str_`` instead.')
+
+(2, '* Alias ``np.Inf`` has been removed. Use ``np.inf`` instead.')
+
+(2, '* Alias ``np.Infinity`` has been removed. Use ``np.inf`` instead.')
+
+(2, '* Alias ``np.NaN`` has been removed. Use ``np.nan`` instead.')
+
+(2, '* Alias ``np.infty`` has been removed. Use ``np.inf`` instead.')
+
+(2, '* Alias ``np.mat`` has been removed. Use ``np.asmatrix`` instead.')
+
+(2, '* ``np.issubclass_`` has been removed. Use the ``issubclass`` builtin instead.')
+
+(2, '* ``np.asfarray`` has been removed. Use ``np.asarray`` with a proper dtype instead.')
+
+(2, '* ``np.set_string_function`` has been removed. Use ``np.set_printoptions``')
+
+(2, '  ``np.sctypes``, ``np.issubsctype`` were all removed from the')
+
+(2, '* Deprecated ``np.deprecate`` and ``np.deprecate_with_doc`` has been removed ')
+
+(2, '* Deprecated ``np.safe_eval`` has been removed from the main namespace. ')
+
+(2, '* ``np.find_common_type`` has been removed. Use ``numpy.promote_types`` or')
+
+(2, '* ``np.round_`` has been removed. Use ``np.round`` instead.')
+
+(2, '* ``np.nbytes`` has been removed. Use ``np.dtype(<dtype>).itemsize`` instead.')
+
+(2, '* ``np.compare_chararrays`` has been removed from the main namespace. ')
+
+(2, '* ``np.format_parser`` has been removed from the main namespace. ')
+
+(2, '* Support for seven data type string aliases has been removed from ``np.dtype``:')
+
+(2, '* The experimental ``numpy.array_api`` submodule has been removed. Use the main')
+
+(2, '``__array_prepare__`` is removed')
+
+(2, 'It is now removed. If you use it, migrate to ``__array_ufunc__`` or rely on')
+
+(2, '* The ``np.core.umath_tests`` submodule has been removed from the public API.')
+
+(2, '  removed.  Use ``tracemalloc`` and the ``np.lib.tracemalloc_domain``')
+
+(2, '  been expired and the functions removed.  (Deprecated in NumPy 1.16)')
+
+(2, '  are now removed.')
+
+(2, '* ``np.msort`` has been removed. For a replacement, ``np.sort(a, axis=0)``')
+
+(2, '* The ``f2py.compile()`` helper has been removed because it leaked memory, has')
+
+(2, '  ``PyArray_CEQ``, ``PyArray_CNE`` macros have been removed.')
+
+(3, '  address.  Unlike ``PyArray_SETITEM`` this function is equivalent to setting')
+
+(2, '* The ``->f`` slot has been removed from ``PyArray_Descr``.')
+
+(3, 'and ``NpyDatetime_ParseISO8601Datetime`` have been added to the C API to')
+
+(3, 'additional runtime check.')
+
+(3, 'We have now added ``PyArray_ImportNumPyAPI`` and ``PyUFunc_ImportUFuncAPI``')
+
+(3, '  if not, allowing to add them judiciously (although this is not preferable')
+
+(2, '  have been removed.  We recommend querying ``PyErr_CheckSignals()`` or')
+
+(2, '* The ``noprefix.h`` header has been removed. Replace missing symbols with')
+
+(1, '  their prefixed counterparts (usually an added ``NPY_`` or ``npy_``).')
+
+(2, '  have been removed.')
+
+(1, '  functions would have made ``with np.errstate()`` fixes much more difficult).')
+
+(2, '  has been removed.  This removes macros of the form ``PyArray_CONSTANT``.')
+
+(2, '* The ``legacy_inner_loop_selector`` member of the ufunc struct is removed')
+
+(2, '* ``NPY_INTPLTR`` has been removed to avoid confusion (see ``intp``')
+
+(2, '* The advanced indexing ``MapIter`` and related API has been removed.')
+
+(2, '* The ``NPY_MAX_ELSIZE`` macro has been removed, as it only ever reflected')
+
+(2, '* ``PyArray_REFCNT`` and ``NPY_REFCOUNT`` are removed. Use ``Py_REFCNT`` instead.')
+
+(2, '* ``PyArray_MoveInto``, ``PyArray_CastTo``, ``PyArray_CastAnyTo`` are removed')
+
+(2, '* ``PyArray_FillObjectArray`` is removed, its only true use was for')
+
+(2, '* ``PyArray_CompareUCS4`` and ``PyArray_CompareString`` are removed.')
+
+(2, '* ``PyArray_ISPYTHON`` is removed as it is misleading, has no known')
+
+(2, '* ``PyArray_FieldNames`` is removed, as it is unclear what it would')
+
+(2, '* ``PyArray_TypestrConvert`` is removed, since it seems a misnomer and unlikely')
+
+(2, '* ``PyDataType_GetDatetimeMetaData`` is removed, it did not actually')
+
+(2, '* ``PyArray_GetCastFunc`` is removed. Note that custom legacy user dtypes')
+
+(2, '  is now removed.  The reason for this is that NumPy never used these')
+
+(3, '``np.add`` was extended to work with ``unicode`` and ``bytes`` dtypes.')
+
+(3, 'integer) support, in macOS 13.3 has been added. This brings arm64 support, and')
+
+(3, 'A new function named ``opt_func_info`` has been added to the new namespace')
+
+(3, 'added, which are array API standard-compatible variants of `numpy.diagonal` and')
+
+(3, '`numpy.long` and `numpy.ulong` have been added as NumPy integers mapping')
+
+(3, '`numpy.linalg.svdvals` has been added. It computes singular values for')
+
+(3, "`numpy.isdtype` was added to provide a canonical way to classify NumPy's dtypes")
+
+(3, '`numpy.astype` was added to provide an array API standard-compatible')
+
+(3, '13 aliases for existing functions were added to improve compatibility with the array API standard:')
+
+(3, 'and `~numpy.unique_values` functions have been added. They provide')
+
+(3, 'Six new functions and two aliases were added to improve compatibility with')
+
+(3, '* `numpy.linalg.outer` has been added. It computes the outer product of two')
+
+(3, '* `numpy.linalg.cross` has been added. It computes the cross product of two')
+
+(3, 'A ``correction`` argument was added to `~numpy.var` and `~numpy.std`, which is')
+
+(3, 'added to ``numpy.ndarray`` for array API standard compatibility.')
+
+(3, 'Additionally, ``device`` keyword-only arguments were added to:')
+
+(3, 'StringDType has been added to NumPy')
+
+(3, 'We have added a new variable-width UTF-8 encoded string data type, implementing')
+
+(3, 'The ``upper`` and ``rtol`` keywords were added to `numpy.linalg.cholesky` and')
+
+(3, 'New keyword parameters were added to improve array API standard compatibility:')
+
+(3, '* ``rtol`` was added to `~numpy.linalg.matrix_rank`.')
+
+(3, '* ``stable`` was added to `~numpy.sort` and `~numpy.argsort`.')
+
+(3, '  layer have been added which can be used by downstream packages to continue')
+
+(3, 'A ``mean`` keyword was added to var and std function')
+
+(2, '``-Drelaxed-strides-debug`` config-settings flag has been removed.')
+
+(3, 'In some cases, this means you may have to add a specific path for:')
+
+(3, '    ef664eaadd0796fbc37fc3cc0c498c2e  numpy-2.0.0rc2-cp39-cp39-macosx_11_0_arm64.whl')
+

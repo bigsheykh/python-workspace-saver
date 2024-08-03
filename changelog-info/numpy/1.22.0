@@ -1,0 +1,38 @@
+(3, 'These are in addition to the ongoing work to provide SIMD support for commonly')
+
+(1, 'with 64 bit integer OpenBLAS, which should fix the occasional problems')
+
+(2, 'Deprecated numeric style dtype strings have been removed')
+
+(1, 'random variate always being 0.  This has been fixed.')
+
+(3, 'Also add a ``NUMPY_WARN_IF_NO_MEM_POLICY`` override to warn on dangerous use')
+
+(3, 'been added as ``numpy.array_api``. The implementation is experimental and will')
+
+(3, 'To enable the plugin, one must add it to their mypy `configuration file`_:')
+
+(3, 'wrapped in a ``PyCapsule``. Also add a ``np._from_dlpack(obj)`` function, where')
+
+(3, '``keepdims`` optional argument added to ``numpy.argmin``, ``numpy.argmax``')
+
+(3, '``keepdims`` argument is added to ``numpy.argmin``, ``numpy.argmax``.  If set')
+
+(3, 'The ``ndim`` and ``axis`` attributes have been added to ``numpy.AxisError``')
+
+(3, '``numpy`` added support for windows/arm64 target. Please note ``OpenBLAS``')
+
+(3, 'architecture, so add the commit.')
+
+(3, 'A ``.clang-format`` file has been added')
+
+(3, 'Clang-format is a C/C++ code formatter, together with the added')
+
+(3, 'A new symbolic parser has been added to f2py in order to correctly parse')
+
+(3, 'Missing parameters have been added to the ``nan<x>`` functions')
+
+(3, 'The following parameters have now been added to the ``nan<x>`` functions:')
+
+(3, '    9ae6ecde0cbeadd2a9d7b8ae54285863  numpy-1.22.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl')
+

@@ -1,0 +1,36 @@
+(3, 'addition of Python 3.12.0 support. Python 3.12 dropped distutils, consequently')
+
+(3, 'first release that supports Cython 3.0 in addition to retaining 0.29.X')
+
+(1, '- f2py fixes, meson and bind(x) support')
+
+(3, 'integer) support, in macOS 13.3 has been added. This brings arm64 support, and')
+
+(1, '* `24322 <https://github.com/numpy/numpy/pull/24322>`__: CI: fix wheel builds on the 1.26.x branch')
+
+(1, '* `24328 <https://github.com/numpy/numpy/pull/24328>`__: BUG: fix choose refcount leak')
+
+(1, '* `24337 <https://github.com/numpy/numpy/pull/24337>`__: TST: fix running the test suite in builds without BLAS/LAPACK')
+
+(1, '* `24356 <https://github.com/numpy/numpy/pull/24356>`__: TST: fix distutils tests for deprecations in recent setuptools...')
+
+(1, '* `24455 <https://github.com/numpy/numpy/pull/24455>`__: ENH: Add prefix to _ALIGN Macro')
+
+(2, '* `24495 <https://github.com/numpy/numpy/pull/24495>`__: BUG: ``asv dev`` has been removed, use ``asv run``.')
+
+(1, '* `24521 <https://github.com/numpy/numpy/pull/24521>`__: BUG: fix issue with git-version script, needs a shebang to run')
+
+(1, '* `24524 <https://github.com/numpy/numpy/pull/24524>`__: BUG: fix NPY_cast_info error handling in choose')
+
+(3, '* `24545 <https://github.com/numpy/numpy/pull/24545>`__: TYP: add kind argument to numpy.isin type specification')
+
+(1, '* `24561 <https://github.com/numpy/numpy/pull/24561>`__: BUG: fix comparisons between masked and unmasked structured arrays')
+
+(1, '* `24591 <https://github.com/numpy/numpy/pull/24591>`__: BLD: fix ``_umath_linalg`` dependencies')
+
+(1, '* `24602 <https://github.com/numpy/numpy/pull/24602>`__: BLD: meson-cpu: fix SIMD support on platforms with no features')
+
+(1, '* `24622 <https://github.com/numpy/numpy/pull/24622>`__: BUG, ENH: Fix ``iso_c_binding`` type maps and fix ``bind(c)``...')
+
+(3, '    26571d9f63f49e7612fcfc4375ad23d6882e951bca335115ce440add1a565556  numpy-1.26.0rc1-cp311-cp311-musllinux_1_1_x86_64.whl')
+

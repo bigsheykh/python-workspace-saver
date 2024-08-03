@@ -1,0 +1,20 @@
+(3, '    This is needed to allow adding values to existing fields')
+
+(3, "    (``loader.add_value('field', 'value2')``).")
+
+(3, '    :ref:`implement support for additional parsers')
+
+(1, 'Bug fixes')
+
+(1, '    :func:`scrapy.utils.ssl.get_temp_key_info` has been fixed (:issue:`3920`)')
+
+(3, '*   API documentation added for :class:`~scrapy.exporters.MarshalItemExporter`')
+
+(3, '*   API documentation added for :class:`~scrapy.item.BaseItem` and')
+
+(1, '*   Minor documentation fixes (:issue:`2998`, :issue:`3398`, :issue:`3597`,')
+
+(2, '*   ``scrapy.xlib`` has been removed (:issue:`4015`)')
+
+(1, '*   Continuous integration fixes (:issue:`3923`)')
+

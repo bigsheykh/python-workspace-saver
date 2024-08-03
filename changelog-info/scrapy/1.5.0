@@ -1,0 +1,10 @@
+(1, '* Logging of settings overridden by ``custom_settings`` is fixed;')
+
+(3, '* 522 and 524 status codes are added to ``RETRY_HTTP_CODES`` (:issue:`2851`)')
+
+(3, '- New ``--meta`` option of the "scrapy parse" command allows to pass additional')
+
+(1, 'Bug fixes')
+
+(1, '- Small fix in description of startproject arguments (:issue:`2866`)')
+

@@ -1,0 +1,8 @@
+(1, '-   Bug fixes.')
+
+(1, 'Bug fixes')
+
+(1, '-   :func:`scrapy.utils.request.request_from_curl` now supports $-prefixed')
+
+(1, '    found problems were fixed. (:issue:`5816`, :issue:`5826`, :issue:`5919`)')
+

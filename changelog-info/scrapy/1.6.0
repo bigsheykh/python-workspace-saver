@@ -1,0 +1,42 @@
+(1, '* ``scrapy.contracts`` fixes and new features;')
+
+(1, '* various bug fixes, small new features and usability improvements across')
+
+(1, 'fixes a **security issue**; see :ref:`release-1.5.2` release notes for details.')
+
+(3, '* ``from_crawler`` support is added to feed exporters and feed storages. This,')
+
+(3, '* ``from_crawler`` support is added to dupefilters (:issue:`2956`); this allows')
+
+(3, '* a message is added to IgnoreRequest in RobotsTxtMiddleware (:issue:`3113`)')
+
+(3, '* Link extraction improvements: "ftp" is added to scheme list (:issue:`3152`);')
+
+(3, '  "flv" is added to common video extensions (:issue:`3165`)')
+
+(3, '* Referer header value is added to RFPDupeFilter log messages (:issue:`3588`)')
+
+(1, 'Bug fixes')
+
+(1, '* fixed issue with extra blank lines in .csv exports under Windows')
+
+(3, '* troubleshooting section is added to install instructions (:issue:`3517`);')
+
+(1, '* fixed :setting:`RETRY_HTTP_CODES` default values in docs (:issue:`3335`);')
+
+(2, 'Compatibility shims for pre-1.0 Scrapy module names are removed')
+
+(2, '* Deprecated scrapy.interfaces.ISpiderManager is removed; please use')
+
+(2, '* Deprecated ``CrawlerSettings`` class is removed (:issue:`3327`).')
+
+(2, '  are removed (:issue:`3327`, :issue:`3359`).')
+
+(1, '* Testing and CI fixes (:issue:`3526`, :issue:`3538`, :issue:`3308`,')
+
+(3, '* additional files are included to sdist (:issue:`3495`);')
+
+(1, '* code style fixes (:issue:`3405`, :issue:`3304`);')
+
+(2, '* unneeded .strip() call is removed (:issue:`3519`);')
+

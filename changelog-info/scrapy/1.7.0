@@ -1,0 +1,12 @@
+(3, '*   An additional ``crawler`` parameter has been added to the ``__init__``')
+
+(1, 'Bug fixes')
+
+(1, '*   Minor documentation fixes (:issue:`3648`, :issue:`3649`, :issue:`3662`,')
+
+(2, 'The following deprecated APIs have been removed (:issue:`3578`):')
+
+(2, 'The following deprecated settings have also been removed (:issue:`3578`):')
+
+(1, '*   Internal fixes and cleanup (:issue:`3629`, :issue:`3643`, :issue:`3684`,')
+

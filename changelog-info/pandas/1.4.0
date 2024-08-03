@@ -1,0 +1,72 @@
+(3, '  - Styling and formatting of indexes has been added, with :meth:`.Styler.apply_index`, :meth:`.Styler.applymap_index` and :meth:`.Styler.format_index`. These mirror the signature of the methods already used to style and format data values, and work with both HTML, LaTeX and Excel format (:issue:`41893`, :issue:`43101`, :issue:`41993`, :issue:`41995`)')
+
+(3, '  - The keyword arguments ``level`` and ``names`` have been added to :meth:`.Styler.hide` (and implicitly to the deprecated methods :meth:`.Styler.hide_index` and :meth:`.Styler.hide_columns`) for additional control of visibility of MultiIndexes and of Index names (:issue:`25475`, :issue:`43404`, :issue:`43346`)')
+
+(3, '  - The :meth:`.Styler.export` and :meth:`.Styler.use` have been updated to address all of the added functionality from v1.2.0 and v1.3.0 (:issue:`40675`)')
+
+(3, '  - Global options under the category ``pd.options.styler`` have been extended to configure default ``Styler`` properties which address formatting, encoding, and HTML and LaTeX rendering. Note that formerly ``Styler`` relied on ``display.html.use_mathjax``, which has now been replaced by ``styler.html.mathjax`` (:issue:`41395`)')
+
+(1, '  - Various bug fixes as recorded below')
+
+(3, '  - :meth:`.Styler.bar` introduces additional arguments to control alignment and display (:issue:`26070`, :issue:`36419`), and it also validates the input arguments ``width`` and ``height`` (:issue:`42511`)')
+
+(3, '  - *cline* support has been added for :class:`MultiIndex` row sparsification through a keyword argument (:issue:`45138`)')
+
+(1, '- Add :meth:`Series.str.removeprefix` and :meth:`Series.str.removesuffix` introduced in Python 3.9 to remove pre-/suffixes from string-type :class:`Series` (:issue:`36944`)')
+
+(3, '- :class:`ExcelWriter` argument ``if_sheet_exists="overlay"`` option added (:issue:`40231`)')
+
+(3, '- New option ``display.max_dir_items`` customizes the number of columns added to :meth:`Dataframe.__dir__` and suggested for tab completion (:issue:`37996`)')
+
+(3, '- :meth:`Series.info` has been added, for compatibility with :meth:`DataFrame.info` (:issue:`5167`)')
+
+(1, '.. _whatsnew_140.notable_bug_fixes:')
+
+(1, 'Notable bug fixes')
+
+(1, 'These are bug fixes that might have notable behavior changes.')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.inconsistent_date_string_parsing:')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.concat_with_empty_or_all_na:')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.value_counts_and_mode_do_not_coerce_to_nan:')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.read_csv_mangle_dup_cols:')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.unstack_pivot_int32_limit:')
+
+(1, '.. _whatsnew_140.notable_bug_fixes.groupby_apply_mutation:')
+
+(2, 'This inconsistency has been removed, pandas now tests up to equality.')
+
+(1, '.. _whatsnew_140.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug in inplace addition and subtraction of :class:`DatetimeIndex` or :class:`TimedeltaIndex` with :class:`DatetimeArray` or :class:`TimedeltaArray` (:issue:`43904`)')
+
+(3, '- Bug in addition of a :class:`Tick` object and a ``np.timedelta64`` object incorrectly raising instead of returning :class:`Timedelta` (:issue:`44474`)')
+
+(3, '- Bug in adding a ``np.timedelta64`` object to a :class:`BusinessDay` or :class:`CustomBusinessDay` object incorrectly raising (:issue:`44532`)')
+
+(3, "- Bug in :meth:`Index.insert` for inserting ``np.datetime64``, ``np.timedelta64`` or ``tuple`` into :class:`Index` with ``dtype='object'`` with negative loc adding ``None`` and replacing existing value (:issue:`44509`)")
+
+(3, '- Bug in :class:`DateOffset` addition with :class:`Timestamp` where ``offset.nanoseconds`` would not be included in the result (:issue:`43968`, :issue:`36589`)')
+
+(3, '- Fixed regression where a single column ``np.matrix`` was no longer coerced to a 1d ``np.ndarray`` when added to a :class:`DataFrame` (:issue:`42376`)')
+
+(1, '- Bug in :func:`json_normalize` where multi-character ``sep`` parameter is incorrectly prefixed to every key (:issue:`43831`)')
+
+(1, '- Bug in :meth:`DataFrame.to_json` fix memory leak (:issue:`43877`)')
+
+(3, '- Bug in adding a :class:`Period` object to a ``np.timedelta64`` object incorrectly raising ``TypeError`` (:issue:`44182`)')
+
+(1, '- Fixed metadata propagation in :meth:`Dataframe.apply` method, consequently fixing the same issue for :meth:`Dataframe.transform`, :meth:`Dataframe.nunique` and :meth:`Dataframe.mode` (:issue:`28283`)')
+
+(1, '- NumPy ufuncs ``np.abs``, ``np.positive``, ``np.negative`` now correctly preserve dtype when called on ExtensionArrays that implement ``__abs__, __pos__, __neg__``, respectively. In particular this is fixed for :class:`TimedeltaArray` (:issue:`43899`, :issue:`23316`)')
+
+(3, '- NumPy ufuncs ``np.minimum.reduce`` ``np.maximum.reduce``, ``np.add.reduce``, and ``np.prod.reduce`` now work correctly instead of raising ``NotImplementedError`` on :class:`Series` with ``IntegerDtype`` or ``FloatDtype`` (:issue:`43923`, :issue:`44793`)')
+
+(3, '- Bug in :meth:`CustomBusinessMonthBegin.__add__` (:meth:`CustomBusinessMonthEnd.__add__`) not applying the extra ``offset`` parameter when beginning (end) of the target month is already a business day (:issue:`41356`)')
+

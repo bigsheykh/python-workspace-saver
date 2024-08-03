@@ -1,0 +1,4 @@
+(3, '- A minimal web ui was added, available at http://localhost:6800 by default')
+
+(3, '- added ``HTTPCACHE_ENABLED`` setting (False by default) to enable HTTP cache middleware')
+

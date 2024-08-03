@@ -1,0 +1,4 @@
+(1, 'As it is a major change, we wanted to get the bug fix out quickly')
+
+(2, '- ``ChunkedTransferMiddleware`` is deprecated and removed from the default')
+

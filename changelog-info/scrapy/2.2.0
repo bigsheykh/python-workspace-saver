@@ -1,0 +1,4 @@
+(1, '* :class:`~scrapy.downloadermiddlewares.cookies.CookiesMiddleware` fixes')
+
+(1, 'Bug fixes')
+

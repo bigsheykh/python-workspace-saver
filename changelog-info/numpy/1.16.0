@@ -1,0 +1,90 @@
+(1, 'as a long term release with bug fixes until 2020.  Support for Python 3.4 been')
+
+(1, 'are linked with OpenBLAS v0.3.4+,  which should fix the known threading issues')
+
+(1, 'This release has seen a lot of refactoring and features many bug fixes, improved')
+
+(3, '* New functions added to the `numpy.lib.recfuntions` module to ease the')
+
+(2, '* ``np.lib.function_base.unique`` was removed, finishing a deprecation cycle')
+
+(2, '* ``np.PackageLoader`` and ``np.pkgload`` have been removed. These were')
+
+(3, 'will often have extra padding bytes corresponding to intervening fields in the')
+
+(3, 'Additional ``FutureWarnings`` about this change were added in 1.12.')
+
+(3, 'functions have been added to the ``numpy.lib.recfunctions`` module which')
+
+(3, 'The :c:data:`NPY_API_VERSION` was incremented to 0x0000D, due to the addition')
+
+(3, 'Integrated squared error (ISE) estimator added to ``histogram``')
+
+(3, '``max_rows`` keyword added for ``np.loadtxt``')
+
+(3, 'modulus operator support added for ``np.timedelta64`` operands')
+
+(1, 'distribution. This has been fixed so that e.g.')
+
+(3, 'have been addressed. CI testing has been expanded to include AARCH64 targets')
+
+(1, 'Generalized ufunc signatures now allow fixed-size dimensions')
+
+(1, 'size being equal to the fixed one given in the signature.')
+
+(1, 'allowed to postfix a dimension name with a question mark to indicate that the')
+
+(3, 'With this addition, the signature for ``matmul`` can be expressed as')
+
+(2, 'the flexible dimension removed, i.e., it will have shape ``(..., m)``.')
+
+(3, 'A further possible value has been added to the ``cov`` parameter of the')
+
+(3, 'and other path-like objects in addition to a file object. Furthermore, the')
+
+(3, 'ufuncs like ``add`` and ``multiply``.')
+
+(3, 'Additionally, `logaddexp` now has an identity of ``-inf``, allowing it to be')
+
+(3, 'padding.')
+
+(3, 'CI extended with additional services')
+
+(3, 'We now use additional free CI services, thanks to the companies that provide:')
+
+(3, 'These are in addition to our continued use of travis, appveyor (for wheels) and')
+
+(1, 'emitted. In 1.15 we fixed the inconsistencies which caused the warnings to')
+
+(3, '    ef4ae41add536cb825d8aa029c15ef510aead06ea5b68daea64f0b9ecbff17db  numpy-1.16.0-cp36-cp36m-win_amd64.whl')
+
+(1, '* New F2PY features and fixes.')
+
+(2, '* The ``normed`` keyword argument has been removed from')
+
+(2, '* Support for Visual Studio 2015 and earlier has been removed.')
+
+(2, '* Support for the Windows Interix POSIX interop layer has been removed.')
+
+(2, '* Support for cygwin < 3.3 has been removed.')
+
+(2, '* The mini() method of ``np.ma.MaskedArray`` has been removed. Use either')
+
+(2, '  removed. Use ``np.ma.minimum.reduce()`` or ``np.ma.maximum.reduce()``')
+
+(3, '  1.20).  Some of these will now give a FutureWarning in addition to raising an')
+
+(3, 'New attribute ``symbol`` added to polynomial classes')
+
+(3, 'A new function ``numpy.show_runtime`` has been added to display the runtime')
+
+(3, 'information of the machine in addition to ``numpy.show_config`` which displays')
+
+(3, 'New parameter ``equal_nan`` added to ``np.unique``')
+
+(1, '* Numerous bug and ``flake8`` warning fixes')
+
+(1, '  are prefixed with ``f2py_``. For example, one should use ``f2py_len(x)``')
+
+(3, 'less_equal, maximum, minimum, fmax, fmin, argmax, argmin, add, subtract,')
+

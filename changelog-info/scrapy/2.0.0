@@ -1,0 +1,26 @@
+(2, '* Python 2 support has been removed')
+
+(2, '*   Python 2 support has been removed, following `Python 2 end-of-life on')
+
+(2, '*   LevelDB support has been removed (:issue:`4112`)')
+
+(2, '*   The following functions have been removed from :mod:`scrapy.utils.python`:')
+
+(1, '*   Using environment variables prefixed with ``SCRAPY_`` to override settings')
+
+(3, '*   :class:`~scrapy.logformatter.LogFormatter` now supports some additional')
+
+(1, 'Bug fixes')
+
+(1, '    have fixed some of the issues detected (:issue:`4142`, :issue:`4146`,')
+
+(3, '    *   A new keyword parameter has been added: ``key``. It is a string')
+
+(3, '*   The following class attributes have been added:')
+
+(2, '*   The ``serialize`` attribute has been removed (details above)')
+
+(3, '    method has been added which, given a request, returns')
+
+(2, '*   The ``spider`` attribute has been removed. Use')
+

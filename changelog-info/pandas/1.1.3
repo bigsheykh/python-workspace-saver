@@ -1,0 +1,12 @@
+(1, '- The minimum version of Cython is now the most recent bug-fix version (0.29.21) (:issue:`36296`).')
+
+(1, '- Fixed regression in :meth:`DataFrame.agg`, :meth:`DataFrame.apply`, :meth:`Series.agg`, and :meth:`Series.apply` where internal suffix is exposed to the users when no relabelling is applied (:issue:`36189`)')
+
+(3, '- Fixed regression when adding a :meth:`timedelta_range` to a :class:`Timestamp` raised a ``ValueError`` (:issue:`35897`)')
+
+(1, '.. _whatsnew_113.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Reverted enhancement added in pandas-1.1.0 where :func:`timedelta_range` infers a frequency when passed ``start``, ``stop``, and ``periods`` (:issue:`32377`)')
+

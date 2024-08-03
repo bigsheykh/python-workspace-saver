@@ -1,0 +1,8 @@
+(3, '              Unexpected options: binary" error, you may need to add')
+
+(2, '    Scrapy 2.6.0, has now been removed. (:issue:`6111`)')
+
+(1, 'Bug fixes')
+
+(3, '-   Fixed logging enabled add-ons. (:issue:`6036`)')
+

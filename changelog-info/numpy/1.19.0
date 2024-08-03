@@ -1,0 +1,44 @@
+(2, 'Python 2 has been removed, many deprecations have been expired, and')
+
+(1, 'apace with bug fixes and better usability from Cython.')
+
+(1, "with small 'alpha' values was fixed by using a different algorithm when")
+
+(1, 'This also fixes ``np.choose`` to behave the same way as the rest of NumPy')
+
+(3, 'its additional ``to_end`` and ``to_begin`` arguments. This')
+
+(2, '``multiarray.int_asbuffer`` was removed. On Python 3, it threw a')
+
+(2, '``numpy.distutils.compat`` has been removed')
+
+(1, 'also fixes string to datetime and timedelta casts to behave')
+
+(3, 'Small seeds (less than ``2**96``) were previously implicitly 0-padded out to')
+
+(3, 'was concatenated before the 0-padding. Since the first spawn key is ``(0,)``,')
+
+(3, '``SeedSequence``.  Now, the seed is explicitly 0-padded out to the internal')
+
+(3, 'A new kwarg, ``subok``, was added to ``numpy.copy`` to allow users to toggle')
+
+(3, '``numpy.copy``, call ``np.copy(arr, subok=True)``. This addition better')
+
+(3, 'The parameter ``keepdims`` was added to ``numpy.count_nonzero``. The')
+
+(3, 'The keyword argument ``equal_nan`` was added to ``numpy.array_equal``.')
+
+(3, 'On Linux NumPy has previously added support for madavise hugepages which can')
+
+(3, '``np.logaddexp2.identity`` changed to ``-inf``')
+
+(3, 'The ufunc ``~numpy.logaddexp2`` now has an identity of ``-inf``, allowing it to')
+
+(3, 'be called on empty sequences.  This matches the identity of ``~numpy.logaddexp``.')
+
+(2, 'was for its use. It has been removed.')
+
+(1, 'distribution. This is now fixed.')
+
+(1, 'This fix changes the stream produced from jumped MT19937 generators. It does')
+

@@ -1,0 +1,6 @@
+(1, '- Multiple documentation enhancements and fixes')
+
+(1, 'Bugfixes')
+
+(1, '- Use lucasdemarchi/codespell to fix typos (:issue:`628`)')
+

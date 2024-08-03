@@ -1,0 +1,32 @@
+(3, '- added :ref:`topics-contracts`, a mechanism for testing spiders in a formal/reproducible way')
+
+(3, '- added options ``-o`` and ``-t`` to the :command:`runspider` command')
+
+(3, '- documented :doc:`topics/autothrottle` and added to extensions installed by default. You still need to enable it with :setting:`AUTOTHROTTLE_ENABLED`')
+
+(2, '- major Stats Collection refactoring: removed separation of global/per-spider stats, removed stats-related signals (``stats_spider_opened``, etc). Stats are much simpler now, backward compatibility is kept on the Stats Collector API and signals.')
+
+(3, '- added :meth:`~scrapy.spidermiddlewares.SpiderMiddleware.process_start_requests` method to spider middlewares')
+
+(2, '- removed modules: ``scrapy.xlib.BeautifulSoup`` and ``scrapy.xlib.ClientForm``')
+
+(3, '- SitemapSpider: added support for sitemap urls ending in .xml and .xml.gz, even if they advertise a wrong content type (:commit:`10ed28b`)')
+
+(3, '- added :reqmeta:`cookiejar` Request meta key to support multiple cookie sessions per spider')
+
+(3, '- added :setting:`REFERER_ENABLED` setting, to control referer middleware')
+
+(2, '- removed (undocumented) ``HTMLImageLinkExtractor`` class from ``scrapy.contrib.linkextractors.image``')
+
+(2, '- removed per-spider settings (to be replaced by instantiating multiple crawler objects)')
+
+(2, '- removed ``ENCODING_ALIASES`` setting, as encoding auto-detection has been moved to the `w3lib`_ library')
+
+(2, '- replaced memory usage accounting with (more portable) `resource`_ module, removed ``scrapy.utils.memory`` module')
+
+(2, '- removed signal: ``scrapy.mail.mail_sent``')
+
+(2, '- removed ``TRACK_REFS`` setting, now :ref:`trackrefs <topics-leaks-trackrefs>` is always enabled')
+
+(2, '- removed ``scrapy.log.started`` attribute')
+

@@ -1,0 +1,46 @@
+(2, '    The pandas 1.0 release removed a lot of functionality that was deprecated')
+
+(3, "We've added an ``engine`` keyword to :meth:`~core.window.rolling.Rolling.apply` and :meth:`~core.window.expanding.Expanding.apply`")
+
+(3, "We've added a :func:`pandas.api.indexers.BaseIndexer` class that allows users to define how")
+
+(3, "We've added :meth:`~DataFrame.to_markdown` for creating a markdown table (:issue:`11052`)")
+
+(3, 'In addition to arithmetic operations, ``pd.NA`` also propagates as "missing"')
+
+(3, "We've added :class:`StringDtype`, an extension type dedicated to string data.")
+
+(3, "We've added :class:`BooleanDtype` / :class:`~arrays.BooleanArray`, an extension")
+
+(3, '- :meth:`DataFrame.to_string` added the ``max_colwidth`` parameter to control when wide columns are truncated (:issue:`9784`)')
+
+(3, '- :meth:`Styler.format` added the ``na_rep`` parameter to help format the missing values (:issue:`21527`, :issue:`28358`)')
+
+(1, 'This fixes an inconsistency between ``resample`` and ``groupby``.')
+
+(1, 'This also fixes a potential bug, where the **values** of the result might change')
+
+(3, 'pandas has added a `pyproject.toml <https://www.python.org/dev/peps/pep-0517/>`_ file and will no longer include')
+
+(2, 'have been removed (:issue:`28425`). We recommend using a ``Series`` or')
+
+(3, '- Removed the previously deprecated keyword "box" from :func:`to_datetime` and :func:`to_timedelta`; in addition these now always returns :class:`DatetimeIndex`, :class:`TimedeltaIndex`, :class:`Index`, :class:`Series`, or :class:`DataFrame` (:issue:`24486`)')
+
+(2, '- Ability to read pickles containing :class:`Categorical` instances created with pre-0.16 version of pandas has been removed (:issue:`27538`)')
+
+(1, '.. _whatsnew_100.bug_fixes:')
+
+(1, 'Bug fixes')
+
+(3, '- Bug in :class:`Series` and :class:`DataFrame` with integer dtype failing to raise ``TypeError`` when adding or subtracting a ``np.datetime64`` object (:issue:`28080`)')
+
+(3, '- Bug in :class:`Week` with ``weekday`` incorrectly raising ``AttributeError`` instead of ``TypeError`` when adding or subtracting an invalid type (:issue:`28530`)')
+
+(3, '- Bug in :class:`DatetimeIndex` addition when adding a non-optimized :class:`DateOffset` incorrectly dropping timezone information (:issue:`30336`)')
+
+(3, '- Bug in :class:`DatetimeArray`, :class:`TimedeltaArray`, and :class:`PeriodArray` where inplace addition and subtraction did not actually operate inplace (:issue:`24115`)')
+
+(1, '- Bug in :func:`merge`, did not append suffixes correctly with MultiIndex (:issue:`28518`)')
+
+(3, "- :meth:`DataFrame.to_csv` and :meth:`Series.to_csv` now support dicts as ``compression`` argument with key ``'method'`` being the compression method and others as additional compression options when the compression method is ``'zip'``. (:issue:`26023`)")
+

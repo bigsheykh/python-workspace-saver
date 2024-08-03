@@ -1,0 +1,20 @@
+(1, '- Bugfix cookie merging by hostname and not by netloc (:issue:`352`)')
+
+(1, '- Bugfix ``scrapy.utils.gz.gunzip`` broken by changes in python 2.7.4 (:commit:`4dc76e`)')
+
+(1, '- Bugfix url encoding on ``SgmlLinkExtractor`` (:issue:`24`)')
+
+(1, "- Bugfix ``TakeFirst`` processor shouldn't discard zero (0) value (:issue:`59`)")
+
+(1, '- Bugfix unicode decoding error on ``SgmlLinkExtractor`` (:issue:`199`)')
+
+(1, '- Bugfix signal dispatching on pypi interpreter (:issue:`205`)')
+
+(3, '- MetaRefreshMiddleware and RedirectMiddleware have different priorities to address 62')
+
+(3, '- added from_crawler method to spiders')
+
+(3, '- added system tests with mock server')
+
+(3, '- added --spider option to "shell" command.')
+

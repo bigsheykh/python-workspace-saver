@@ -1,0 +1,58 @@
+(3, 'preferential. See also :ref:`basics.types` for additional details.')
+
+(3, 'calls such as ``numpy.add.outer``. Previously, matrix was')
+
+(2, '  have been removed from the public API. Use ``np.typeDict`` instead.')
+
+(2, 'Financial functions removed')
+
+(2, 'In accordance with NEP 32, the financial functions are removed')
+
+(2, 'from NumPy 1.20. The functions that have been removed are ``fv``,')
+
+(2, 'Numeric-style type names have been removed from type dictionaries')
+
+(2, 'and other numeric-style (capital case) types.  These were removed')
+
+(3, 'The previous behavior was to fall back to addition and add the two arrays,')
+
+(2, '``nickname`` attribute removed from ABCPolyBase')
+
+(2, 'An abstract property ``nickname`` has been removed from  ``ABCPolyBase`` as it')
+
+(1, 'The methods have been fixed to handle varying precision correctly.')
+
+(3, 'These issues always existed, but new API could be added')
+
+(3, 'code that would accept a byte string representation of the pointer address.')
+
+(2, 'That code has been removed, passing the address as a byte string will now')
+
+(1, 'The fix is to either compile against 1.16.6 (if the NumPy 1.16 release is')
+
+(2, 'removed::')
+
+(1, 'fixed structure size may have undefined behaviour and likely crash.')
+
+(3, 'The keyword argument ``where`` is added and allows to only consider specified')
+
+(3, 'The keyword argument ``where`` is added and allows to limit the scope in the')
+
+(3, 'The keyword argument option ``norm=backward`` is added as an alias for ``None``')
+
+(3, 'Type annotations have been added for large parts of NumPy. There is')
+
+(3, 'Both options are somewhat inconvenient, so add a ``--mypy`` option to runtests')
+
+(3, 'Support for the nvfortran compiler, a version of pgfortran, has been added.')
+
+(3, 'Support was added to `~numpy.concatenate` to provide')
+
+(3, 'RPATH support on AIX added to distutils')
+
+(3, '   -  ``--cpu-dispatch`` to specify the dispatched set of additional')
+
+(3, '      improvements, It also adds a new **C** compiler definition')
+
+(3, '   - ``__cpu_dispatch__`` a list contains the dispatched set of additional')
+
